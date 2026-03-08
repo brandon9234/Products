@@ -7,16 +7,18 @@ export default function HomePage() {
         <p className="eyebrow">Products</p>
         <h1>TAM Snapshot Viewer</h1>
         <p>
-          Import your latest TAM spreadsheet into <code>data/tam.snapshot.json</code> and
-          browse it in the internal UI.
+          Browse and edit TAM datasets from committed snapshots with separate tabs for each
+          source workbook.
         </p>
         <div className="home-actions">
           <Link href="/tam" className="primary-link">
-            Open TAM table
+            Open TAM 1
+          </Link>
+          <Link href="/tam-2" className="secondary-link">
+            Open TAM 2
           </Link>
         </div>
       </section>
     </main>
   );
 }
-

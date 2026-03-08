@@ -28,11 +28,11 @@
           "Sublimation": "No",
           "Routering": "Yes",
           "Embroidering": "No",
-          "DTG (Direct to Garmet)": "6-12 business days (processing + transit)",
-          "InkJet": "$8.5M/year (est.)",
-          "Toner Printer": "$12.5M/year (est.)",
-          "Column 12": "$4.3M/year (est.)",
-          "Column 13": "Estimated via marketplace demand proxy; Amazon anchor 'over 8,000 results' + blended AOV/conversion/channel-share model."
+          "DTG (Direct to Garmet)": "No",
+          "InkJet": "Yes",
+          "Toner Printer": "No",
+          "Column 12": null,
+          "Column 13": null
         },
         {
           "Substrates": "Acrylic",
@@ -575,68 +575,68 @@
         {
           "rowIndex": 0,
           "colIndex": 1,
-          "src": "/tam-assets/tam/abs-plastic-r1-c1.png",
-          "fileName": "image8.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r1-c1.png",
+          "fileName": "image2.png"
         },
         {
           "rowIndex": 1,
           "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r2-c0.png",
-          "fileName": "image7.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r2-c0.png",
+          "fileName": "image8.png"
         },
         {
           "rowIndex": 2,
           "colIndex": 1,
-          "src": "/tam-assets/tam/abs-plastic-r3-c1.png",
-          "fileName": "image6.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r3-c1.png",
+          "fileName": "image44.png"
         },
         {
           "rowIndex": 3,
           "colIndex": 1,
-          "src": "/tam-assets/tam/abs-plastic-r4-c1.png",
-          "fileName": "image3.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r4-c1.png",
+          "fileName": "image4.png"
         },
         {
           "rowIndex": 3,
           "colIndex": 1,
-          "src": "/tam-assets/tam/abs-plastic-r4-c1-2.png",
-          "fileName": "image9.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r4-c1-2.png",
+          "fileName": "image5.png"
         },
         {
           "rowIndex": 5,
           "colIndex": 1,
-          "src": "/tam-assets/tam/abs-plastic-r6-c1.png",
-          "fileName": "image11.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r6-c1.png",
+          "fileName": "image3.png"
         },
         {
           "rowIndex": 6,
           "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r7-c0.png",
-          "fileName": "image4.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r7-c0.png",
+          "fileName": "image1.png"
         },
         {
           "rowIndex": 6,
           "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r7-c0-2.png",
-          "fileName": "image2.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r7-c0-2.png",
+          "fileName": "image9.png"
         },
         {
           "rowIndex": 7,
           "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r8-c0.png",
+          "src": "/tam-assets/tam-2/abs-plastic-r8-c0.png",
+          "fileName": "image7.png"
+        },
+        {
+          "rowIndex": 7,
+          "colIndex": 0,
+          "src": "/tam-assets/tam-2/abs-plastic-r8-c0-2.png",
           "fileName": "image10.png"
-        },
-        {
-          "rowIndex": 7,
-          "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r8-c0-2.png",
-          "fileName": "image5.png"
         },
         {
           "rowIndex": 9,
           "colIndex": 0,
-          "src": "/tam-assets/tam/abs-plastic-r10-c0.png",
-          "fileName": "image1.png"
+          "src": "/tam-assets/tam-2/abs-plastic-r10-c0.png",
+          "fileName": "image6.png"
         }
       ]
     },
@@ -2877,368 +2877,368 @@
         {
           "rowIndex": 0,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r1-c0.png",
-          "fileName": "image12.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r1-c0.png",
+          "fileName": "image26.png"
         },
         {
           "rowIndex": 0,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r1-c1.png",
-          "fileName": "image14.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r1-c1.png",
+          "fileName": "image21.png"
         },
         {
           "rowIndex": 1,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r2-c0.png",
-          "fileName": "image28.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r2-c0.png",
+          "fileName": "image20.png"
         },
         {
           "rowIndex": 2,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r3-c1.png",
-          "fileName": "image27.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r3-c1.png",
+          "fileName": "image62.png"
         },
         {
           "rowIndex": 4,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r5-c0.png",
-          "fileName": "image25.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r5-c0.png",
+          "fileName": "image47.png"
         },
         {
           "rowIndex": 5,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r6-c1.png",
-          "fileName": "image13.png"
-        },
-        {
-          "rowIndex": 5,
-          "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r6-c1-2.png",
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r6-c1.png",
           "fileName": "image16.png"
+        },
+        {
+          "rowIndex": 5,
+          "colIndex": 1,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r6-c1-2.png",
+          "fileName": "image23.png"
         },
         {
           "rowIndex": 7,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r8-c0.png",
-          "fileName": "image33.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r8-c0.png",
+          "fileName": "image27.png"
         },
         {
           "rowIndex": 8,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r9-c1.png",
-          "fileName": "image23.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r9-c1.png",
+          "fileName": "image18.png"
         },
         {
           "rowIndex": 9,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r10-c0.png",
-          "fileName": "image30.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r10-c0.png",
+          "fileName": "image13.png"
         },
         {
           "rowIndex": 10,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r11-c0.png",
-          "fileName": "image57.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r11-c0.png",
+          "fileName": "image30.png"
         },
         {
           "rowIndex": 11,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r12-c0.png",
-          "fileName": "image52.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r12-c0.png",
+          "fileName": "image17.png"
         },
         {
           "rowIndex": 11,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r12-c1.png",
-          "fileName": "image34.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r12-c1.png",
+          "fileName": "image24.png"
         },
         {
           "rowIndex": 13,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r14-c0.png",
-          "fileName": "image21.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r14-c0.png",
+          "fileName": "image25.png"
         },
         {
           "rowIndex": 14,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r15-c0.png",
-          "fileName": "image26.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r15-c0.png",
+          "fileName": "image14.png"
         },
         {
           "rowIndex": 15,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r16-c0.png",
-          "fileName": "image32.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r16-c0.png",
+          "fileName": "image12.png"
         },
         {
           "rowIndex": 16,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r17-c0.png",
-          "fileName": "image17.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r17-c0.png",
+          "fileName": "image19.png"
         },
         {
           "rowIndex": 17,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r18-c0.png",
-          "fileName": "image20.png"
-        },
-        {
-          "rowIndex": 18,
-          "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r19-c1.png",
-          "fileName": "image37.png"
-        },
-        {
-          "rowIndex": 18,
-          "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r19-c1-2.png",
-          "fileName": "image31.png"
-        },
-        {
-          "rowIndex": 20,
-          "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r21-c1.png",
-          "fileName": "image24.png"
-        },
-        {
-          "rowIndex": 20,
-          "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r21-c1-2.png",
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r18-c0.png",
           "fileName": "image29.png"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r19-c1.png",
+          "fileName": "image35.png"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r19-c1-2.png",
+          "fileName": "image33.png"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r21-c1.png",
+          "fileName": "image11.png"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r21-c1-2.png",
+          "fileName": "image22.png"
         },
         {
           "rowIndex": 22,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r23-c0.png",
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r23-c0.png",
           "fileName": "image15.png"
         },
         {
           "rowIndex": 23,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r24-c0.png",
-          "fileName": "image18.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r24-c0.png",
+          "fileName": "image38.png"
         },
         {
           "rowIndex": 24,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r25-c0.png",
-          "fileName": "image22.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r25-c0.png",
+          "fileName": "image28.png"
         },
         {
           "rowIndex": 25,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r26-c1.png",
-          "fileName": "image19.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r26-c1.png",
+          "fileName": "image57.png"
         },
         {
           "rowIndex": 26,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r27-c0.png",
-          "fileName": "image40.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r27-c0.png",
+          "fileName": "image36.png"
         },
         {
           "rowIndex": 27,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r28-c0.png",
-          "fileName": "image50.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r28-c0.png",
+          "fileName": "image39.png"
         },
         {
           "rowIndex": 28,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r29-c1.png",
-          "fileName": "image36.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r29-c1.png",
+          "fileName": "image34.png"
         },
         {
           "rowIndex": 29,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r30-c0.png",
-          "fileName": "image35.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r30-c0.png",
+          "fileName": "image32.png"
         },
         {
           "rowIndex": 30,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r31-c0.png",
-          "fileName": "image45.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r31-c0.png",
+          "fileName": "image37.png"
         },
         {
           "rowIndex": 31,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r32-c0.png",
-          "fileName": "image51.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r32-c0.png",
+          "fileName": "image40.png"
         },
         {
           "rowIndex": 32,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r33-c0.png",
-          "fileName": "image42.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r33-c0.png",
+          "fileName": "image46.png"
         },
         {
           "rowIndex": 33,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r34-c0.png",
-          "fileName": "image44.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r34-c0.png",
+          "fileName": "image31.png"
         },
         {
           "rowIndex": 34,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r35-c0.png",
-          "fileName": "image38.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r35-c0.png",
+          "fileName": "image43.png"
         },
         {
           "rowIndex": 34,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r35-c0-2.png",
-          "fileName": "image49.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r35-c0-2.png",
+          "fileName": "image64.png"
         },
         {
           "rowIndex": 36,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r37-c0.png",
-          "fileName": "image48.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r37-c0.png",
+          "fileName": "image41.png"
         },
         {
           "rowIndex": 36,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r37-c1.png",
-          "fileName": "image39.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r37-c1.png",
+          "fileName": "image51.png"
         },
         {
           "rowIndex": 38,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r39-c0.png",
-          "fileName": "image43.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r39-c0.png",
+          "fileName": "image42.png"
         },
         {
           "rowIndex": 39,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r40-c1.png",
-          "fileName": "image58.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r40-c1.png",
+          "fileName": "image48.png"
         },
         {
           "rowIndex": 40,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r41-c0.png",
-          "fileName": "image56.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r41-c0.png",
+          "fileName": "image45.png"
         },
         {
           "rowIndex": 41,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r42-c0.png",
-          "fileName": "image68.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r42-c0.png",
+          "fileName": "image72.png"
         },
         {
           "rowIndex": 42,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r43-c0.png",
-          "fileName": "image41.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r43-c0.png",
+          "fileName": "image55.png"
         },
         {
           "rowIndex": 43,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r44-c0.png",
-          "fileName": "image46.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r44-c0.png",
+          "fileName": "image53.png"
         },
         {
           "rowIndex": 43,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r44-c1.png",
-          "fileName": "image59.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r44-c1.png",
+          "fileName": "image54.png"
         },
         {
           "rowIndex": 45,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r46-c0.png",
-          "fileName": "image47.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r46-c0.png",
+          "fileName": "image52.png"
         },
         {
           "rowIndex": 46,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r47-c0.png",
-          "fileName": "image61.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r47-c0.png",
+          "fileName": "image73.png"
         },
         {
           "rowIndex": 47,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r48-c0.png",
-          "fileName": "image53.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r48-c0.png",
+          "fileName": "image61.png"
         },
         {
           "rowIndex": 48,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r49-c0.png",
-          "fileName": "image54.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r49-c0.png",
+          "fileName": "image58.png"
         },
         {
           "rowIndex": 49,
           "colIndex": 1,
-          "src": "/tam-assets/tam/aluminiumtitanium-r50-c1.png",
-          "fileName": "image70.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r50-c1.png",
+          "fileName": "image63.png"
         },
         {
           "rowIndex": 50,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r51-c0.png",
-          "fileName": "image55.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r51-c0.png",
+          "fileName": "image49.png"
         },
         {
           "rowIndex": 50,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r51-c0-2.png",
-          "fileName": "image67.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r51-c0-2.png",
+          "fileName": "image50.png"
         },
         {
           "rowIndex": 52,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r53-c0.png",
-          "fileName": "image60.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r53-c0.png",
+          "fileName": "image67.png"
         },
         {
           "rowIndex": 53,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r54-c0.png",
-          "fileName": "image63.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r54-c0.png",
+          "fileName": "image59.png"
         },
         {
           "rowIndex": 54,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r55-c0.png",
-          "fileName": "image72.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r55-c0.png",
+          "fileName": "image60.png"
         },
         {
           "rowIndex": 55,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r56-c0.png",
-          "fileName": "image62.png"
-        },
-        {
-          "rowIndex": 56,
-          "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r57-c0.png",
-          "fileName": "image71.png"
-        },
-        {
-          "rowIndex": 56,
-          "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r57-c0-2.png",
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r56-c0.png",
           "fileName": "image65.png"
+        },
+        {
+          "rowIndex": 56,
+          "colIndex": 0,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r57-c0.png",
+          "fileName": "image56.png"
+        },
+        {
+          "rowIndex": 56,
+          "colIndex": 0,
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r57-c0-2.png",
+          "fileName": "image66.png"
         },
         {
           "rowIndex": 58,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r59-c0.png",
-          "fileName": "image66.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r59-c0.png",
+          "fileName": "image69.png"
         },
         {
           "rowIndex": 59,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r60-c0.png",
-          "fileName": "image73.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r60-c0.png",
+          "fileName": "image70.png"
         },
         {
           "rowIndex": 59,
           "colIndex": 0,
-          "src": "/tam-assets/tam/aluminiumtitanium-r60-c0-2.png",
-          "fileName": "image64.png"
+          "src": "/tam-assets/tam-2/aluminiumtitanium-r60-c0-2.png",
+          "fileName": "image68.png"
         }
       ]
     },
@@ -5183,6 +5183,6 @@
       "rowCount": 43
     }
   ],
-  "generatedAt": "2026-03-08T21:24:41.481Z",
-  "sourceFile": "data/raw/tam.xlsx"
+  "generatedAt": "2026-03-08T21:24:43.444Z",
+  "sourceFile": "data/raw/tam-2.xlsx"
 }

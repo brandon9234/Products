@@ -1,7 +1,11 @@
 import * as XLSX from "xlsx";
 import { describe, expect, it } from "vitest";
 
-import { buildSnapshotFromWorkbook, resolveSheetName } from "@/src/lib/tam/importer";
+import {
+  buildSnapshotFromWorkbook,
+  buildWorkbookSnapshotFromWorkbook,
+  resolveSheetName
+} from "@/src/lib/tam/importer";
 
 const FIXED_DATE = new Date("2026-03-08T00:00:00.000Z");
 
@@ -73,5 +77,32 @@ describe("buildSnapshotFromWorkbook", () => {
     expect(first).toEqual(second);
     expect(first.generatedAt).toBe("2026-03-08T00:00:00.000Z");
   });
-});
 
+  it("imports all workbook sheets for tab rendering", () => {
+    const workbook = XLSX.utils.book_new();
+    const firstSheet = XLSX.utils.aoa_to_sheet([
+      ["Substrate", "Enabled"],
+      ["Acrylic", "Yes"]
+    ]);
+    const secondSheet = XLSX.utils.aoa_to_sheet([
+      ["Region", "Demand"],
+      ["US", 42]
+    ]);
+
+    XLSX.utils.book_append_sheet(workbook, firstSheet, "Substrates");
+    XLSX.utils.book_append_sheet(workbook, secondSheet, "Markets");
+
+    const workbookSnapshot = buildWorkbookSnapshotFromWorkbook({
+      workbook,
+      sourceFile: "data/raw/tam.xlsx",
+      generatedAt: FIXED_DATE
+    });
+
+    expect(workbookSnapshot.defaultSheet).toBe("Substrates");
+    expect(workbookSnapshot.sheets.map((sheet) => sheet.name)).toEqual([
+      "Substrates",
+      "Markets"
+    ]);
+    expect(workbookSnapshot.sheets[1].rows[0]).toEqual({ Region: "US", Demand: 42 });
+  });
+});

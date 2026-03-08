@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "import:tam": "tsx scripts/import-tam.ts"
+    "import:tam": "tsx scripts/import-tam.ts",
+    "import:tam:2": "tsx scripts/import-tam.ts --input data/raw/tam-2.xlsx --output data/tam-2.snapshot.json"
   },
   "dependencies": {
     "next": "15.2.4",
@@ -32,4 +33,3 @@
     "vitest": "2.1.8"
   }
 }
-

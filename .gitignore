@@ -7,3 +7,5 @@ coverage
 data/raw/*
 !data/raw/.gitkeep
 
+public/tam-assets/*
+!public/tam-assets/.gitkeep

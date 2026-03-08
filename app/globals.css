@@ -78,6 +78,7 @@ code {
 .home-actions {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .tam-header {
@@ -133,6 +134,29 @@ code {
   border: 1px solid var(--border);
 }
 
+.tab-nav {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 12px;
+  text-decoration: none;
+  background: var(--surface-muted);
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tab-link.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
 .control-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -162,23 +186,21 @@ code {
   border-color: var(--accent);
 }
 
-.filter-panel {
+.inline-field {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-field button,
+.upload-pill {
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 10px 12px;
-  background: var(--surface-muted);
-}
-
-.filter-panel summary {
-  cursor: pointer;
+  font: inherit;
   font-weight: 600;
-}
-
-.filter-grid {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
+  background: var(--surface-muted);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .table-container {
@@ -227,8 +249,64 @@ code {
   font-weight: 700;
 }
 
+.header-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cell-input {
+  width: 100%;
+  min-width: 140px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  background: #ffffff;
+}
+
+.cell-input:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
 .sort-indicator {
   color: var(--accent);
+}
+
+.image-cell {
+  min-width: 220px;
+}
+
+.image-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.row-thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.upload-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-pill input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .empty-row {
@@ -266,4 +344,3 @@ pre {
     justify-content: space-between;
   }
 }
-

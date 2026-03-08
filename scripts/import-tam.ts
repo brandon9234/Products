@@ -4,7 +4,8 @@ import path from "node:path";
 
 import {
   DEFAULT_SHEET_NAME,
-  buildSnapshotFromWorkbook,
+  buildWorkbookSnapshotFromWorkbook,
+  extractWorkbookImages,
   readWorkbookFromFile,
   resolveSheetName
 } from "../src/lib/tam/importer";
@@ -37,23 +38,39 @@ async function main() {
     const workbook = readWorkbookFromFile(resolvedInput);
     const preferredSheet = options.sheet ?? DEFAULT_SHEET_NAME;
     const selectedSheet = resolveSheetName(workbook, preferredSheet);
+    const assetBucket = deriveAssetBucketName(resolvedOutput);
+    const assetOutputDir = path.resolve(cwd, "public", "tam-assets", assetBucket);
+    const assetPublicBasePath = `/tam-assets/${assetBucket}`;
 
-    const snapshot = buildSnapshotFromWorkbook({
+    const imagesBySheet = await extractWorkbookImages({
+      workbook,
+      outputDir: assetOutputDir,
+      publicBasePath: assetPublicBasePath
+    });
+
+    const snapshot = buildWorkbookSnapshotFromWorkbook({
       workbook,
       sourceFile: toPortablePath(path.relative(cwd, resolvedInput)),
-      preferredSheet: preferredSheet
+      preferredSheet: preferredSheet,
+      imagesBySheet
     });
 
     await mkdir(path.dirname(resolvedOutput), { recursive: true });
     await writeFile(resolvedOutput, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 
+    const imageCount = snapshot.sheets.reduce(
+      (total, sheet) => total + (sheet.images?.length ?? 0),
+      0
+    );
+
     console.log(
       [
         `TAM import complete.`,
         `Source: ${resolvedInput}`,
-        `Sheet: ${selectedSheet}`,
-        `Rows: ${snapshot.rowCount}`,
-        `Columns: ${snapshot.columns.length}`,
+        `Default sheet: ${selectedSheet}`,
+        `Sheets imported: ${snapshot.sheets.length}`,
+        `Images extracted: ${imageCount}`,
+        `Image assets: ${assetOutputDir}`,
         `Output: ${resolvedOutput}`
       ].join("\n")
     );
@@ -140,5 +157,15 @@ function toPortablePath(filePath: string): string {
   return filePath.replace(/\\/g, "/");
 }
 
-void main();
+function deriveAssetBucketName(outputPath: string): string {
+  const baseName = path.basename(outputPath, path.extname(outputPath));
+  const withoutSnapshot = baseName.replace(/\.snapshot$/i, "");
+  const sanitized = withoutSnapshot
+    .toLowerCase()
+    .replace(/[^a-z0-9-_]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 
+  return sanitized.length > 0 ? sanitized : "tam";
+}
+
+void main();

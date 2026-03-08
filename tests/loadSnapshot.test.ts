@@ -52,8 +52,15 @@ describe("loadTamSnapshot", () => {
     await writeFile(
       snapshotPath,
       JSON.stringify({
-        columns: ["Market", "Revenue"],
-        rows: [{ Market: "North", Revenue: 100 }],
+        defaultSheet: "MarketData",
+        sheets: [
+          {
+            name: "MarketData",
+            columns: ["Market", "Revenue"],
+            rows: [{ Market: "North", Revenue: 100 }],
+            rowCount: 1
+          }
+        ],
         generatedAt: "2026-03-08T00:00:00.000Z",
         sourceFile: "data/raw/tam.xlsx",
         rowCount: 1
@@ -65,9 +72,8 @@ describe("loadTamSnapshot", () => {
 
     expect(result.status).toBe("ok");
     if (result.status === "ok") {
-      expect(result.snapshot.columns).toEqual(["Market", "Revenue"]);
-      expect(result.snapshot.rows[0]).toEqual({ Market: "North", Revenue: 100 });
+      expect(result.snapshot.sheets[0].columns).toEqual(["Market", "Revenue"]);
+      expect(result.snapshot.sheets[0].rows[0]).toEqual({ Market: "North", Revenue: 100 });
     }
   });
 });
-
