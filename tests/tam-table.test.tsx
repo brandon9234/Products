@@ -6,6 +6,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { TamTable } from "@/app/tam/tam-table";
 import type { TamSheetSnapshot } from "@/src/lib/tam/types";
 
+const { pushMock, refreshMock } = vi.hoisted(() => ({
+  pushMock: vi.fn(),
+  refreshMock: vi.fn()
+}));
+
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({
+    push: pushMock,
+    refresh: refreshMock
+  })
+}));
+
 const fetchMock = vi.fn();
 
 const SAMPLE_SNAPSHOT: TamSheetSnapshot & {
@@ -89,6 +101,8 @@ function createDataTransferStub(initialColumnName: string): DataTransfer {
 describe("TamTable", () => {
   beforeEach(() => {
     fetchMock.mockReset();
+    pushMock.mockReset();
+    refreshMock.mockReset();
     vi.stubGlobal("fetch", fetchMock);
   });
 
@@ -148,6 +162,43 @@ describe("TamTable", () => {
 
     expect(screen.getByLabelText("Rows per page")).toHaveValue("30");
     expect(screen.getByText("Page 1 of 2")).toBeInTheDocument();
+  });
+
+  it("reorders columns for editable Substrates tables", async () => {
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        sheet: {
+          ...SAMPLE_SNAPSHOT,
+          columns: ["Revenue", "Market", "Active"]
+        }
+      })
+    } as Response);
+
+    render(<TamTable datasetId="tam" snapshot={SAMPLE_SNAPSHOT} />);
+
+    const dragHandle = screen.getByRole("button", { name: "Drag column Market" });
+    const revenueColumnHeader = screen.getByRole("columnheader", { name: /Revenue/ });
+    const dataTransfer = createDataTransferStub("Market");
+
+    fireEvent.dragStart(dragHandle, { dataTransfer });
+    fireEvent.dragOver(revenueColumnHeader, { dataTransfer, clientX: 9999 });
+    fireEvent.drop(revenueColumnHeader, { dataTransfer, clientX: 9999 });
+    fireEvent.dragEnd(dragHandle, { dataTransfer });
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      "/api/tam/datasets/tam/sheet",
+      expect.objectContaining({
+        method: "POST",
+        body: JSON.stringify({
+          action: "reorder-column",
+          sheetName: "Substrates",
+          columnName: "Market",
+          targetIndex: 1
+        })
+      })
+    );
+    expect(await screen.findByText("Column order updated.")).toBeInTheDocument();
   });
 
   it("renders upload icon controls and deletes row images", async () => {
@@ -348,5 +399,38 @@ describe("TamTable", () => {
         })
       })
     );
+  });
+
+  it("deletes the current material table and routes to the fallback sheet", async () => {
+    const user = userEvent.setup();
+    const confirmSpy = vi.spyOn(window, "confirm").mockReturnValue(true);
+    fetchMock.mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        ok: true,
+        deletedSheetName: "Acrylic",
+        nextSheetName: "Substrates"
+      })
+    } as Response);
+
+    render(<TamTable datasetId="tam" snapshot={MATERIAL_SNAPSHOT} />);
+
+    await user.click(screen.getByRole("button", { name: "Delete Acrylic" }));
+
+    expect(confirmSpy).toHaveBeenCalledWith(
+      'Delete table "Acrylic"? This permanently removes the sheet and all of its rows from the snapshot.'
+    );
+    expect(fetchMock).toHaveBeenCalledWith(
+      "/api/tam/datasets/tam/sheet",
+      expect.objectContaining({
+        method: "POST",
+        body: JSON.stringify({
+          action: "delete-sheet",
+          sheetName: "Acrylic"
+        })
+      })
+    );
+    expect(pushMock).toHaveBeenCalledWith("/tam?sheet=Substrates");
+    expect(refreshMock).toHaveBeenCalledTimes(1);
   });
 });

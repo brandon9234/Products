@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import {
   MACHINE_COLUMN_NAME,
@@ -53,6 +54,7 @@ function TamTable({
   readOnly = false,
   productCategoryToQueryKey
 }: TamTableProps) {
+  const router = useRouter();
   const [tableData, setTableData] = useState(snapshot);
   const [sortState, setSortState] = useState<SortState | null>(null);
   const [pageSize, setPageSize] = useState(() => getDefaultPageSize(snapshot));
@@ -67,7 +69,9 @@ function TamTable({
   const [dragHoverState, setDragHoverState] = useState<ColumnDragHoverState | null>(null);
   const tableContainerRef = useRef<HTMLDivElement | null>(null);
   const canMutate = !readOnly;
-  const isMaterialsSheet = canMutate && tableData.name !== "Substrates";
+  const canDeleteTable = canMutate && tableData.name !== "Substrates";
+  const canDeleteColumns = canMutate && tableData.name !== "Substrates";
+  const canReorderColumns = canMutate;
 
   useEffect(() => {
     setTableData(snapshot);
@@ -468,6 +472,55 @@ function TamTable({
     }
   }
 
+  async function deleteCurrentTable() {
+    if (!canDeleteTable) {
+      return;
+    }
+
+    const tableName = tableData.name;
+    if (
+      !window.confirm(
+        `Delete table "${tableName}"? This permanently removes the sheet and all of its rows from the snapshot.`
+      )
+    ) {
+      return;
+    }
+
+    try {
+      setIsSaving(true);
+      const response = await fetch(`/api/tam/datasets/${datasetId}/sheet`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          action: "delete-sheet",
+          sheetName: tableName
+        })
+      });
+
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({ error: "Unknown error." }));
+        throw new Error(payload.error ?? "Failed to delete table.");
+      }
+
+      const payload = (await response.json()) as {
+        nextSheetName?: string;
+      };
+      const nextSheetName =
+        typeof payload.nextSheetName === "string" && payload.nextSheetName.trim().length > 0
+          ? payload.nextSheetName
+          : "Substrates";
+
+      router.push(`/tam?sheet=${encodeURIComponent(nextSheetName)}`);
+      router.refresh();
+    } catch (error) {
+      setSaveStateMessage(`Delete table failed: ${(error as Error).message}`);
+    } finally {
+      setIsSaving(false);
+    }
+  }
+
   function startColumnResize(
     event: React.MouseEvent<HTMLButtonElement>,
     columnName: string
@@ -485,7 +538,7 @@ function TamTable({
     event: React.DragEvent<HTMLButtonElement>,
     columnName: string
   ) {
-    if (!isMaterialsSheet || isSaving) {
+    if (!canReorderColumns || isSaving) {
       event.preventDefault();
       return;
     }
@@ -618,6 +671,24 @@ function TamTable({
             </div>
           </label>
         ) : null}
+
+        {canDeleteTable ? (
+          <label className="control-field">
+            <span>Remove table</span>
+            <div className="inline-field">
+              <button
+                type="button"
+                className="danger-inline-button"
+                onClick={() => {
+                  void deleteCurrentTable();
+                }}
+                disabled={isSaving}
+              >
+                Delete {tableData.name}
+              </button>
+            </div>
+          </label>
+        ) : null}
       </div>
 
       <div className="table-container" ref={tableContainerRef}>
@@ -655,14 +726,14 @@ function TamTable({
                     .filter(Boolean)
                     .join(" ")}
                   onDragOver={
-                    isMaterialsSheet
+                    canReorderColumns
                       ? (event) => {
                           handleColumnDragOver(event, column);
                         }
                       : undefined
                   }
                   onDrop={
-                    isMaterialsSheet
+                    canReorderColumns
                       ? (event) => {
                           handleColumnDrop(event, column);
                         }
@@ -685,32 +756,36 @@ function TamTable({
                           : "<>"}
                       </span>
                     </button>
-                    {isMaterialsSheet ? (
+                    {canReorderColumns || canDeleteColumns ? (
                       <div className="column-actions">
-                        <button
-                          type="button"
-                          className="column-action column-action-drag"
-                          aria-label={`Drag column ${column}`}
-                          draggable={!isSaving}
-                          onDragStart={(event) => {
-                            handleColumnDragStart(event, column);
-                          }}
-                          onDragEnd={handleColumnDragEnd}
-                          disabled={isSaving}
-                        >
-                          ::
-                        </button>
-                        <button
-                          type="button"
-                          className="column-action column-action-danger"
-                          aria-label={`Delete column ${column}`}
-                          onClick={() => {
-                            void deleteColumn(column);
-                          }}
-                          disabled={isSaving}
-                        >
-                          x
-                        </button>
+                        {canReorderColumns ? (
+                          <button
+                            type="button"
+                            className="column-action column-action-drag"
+                            aria-label={`Drag column ${column}`}
+                            draggable={!isSaving}
+                            onDragStart={(event) => {
+                              handleColumnDragStart(event, column);
+                            }}
+                            onDragEnd={handleColumnDragEnd}
+                            disabled={isSaving}
+                          >
+                            ::
+                          </button>
+                        ) : null}
+                        {canDeleteColumns ? (
+                          <button
+                            type="button"
+                            className="column-action column-action-danger"
+                            aria-label={`Delete column ${column}`}
+                            onClick={() => {
+                              void deleteColumn(column);
+                            }}
+                            disabled={isSaving}
+                          >
+                            x
+                          </button>
+                        ) : null}
                       </div>
                     ) : null}
                     <button

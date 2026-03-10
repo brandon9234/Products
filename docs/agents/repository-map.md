@@ -28,6 +28,7 @@
 - `AGENTS.md` -> `AGENTS.md`: Top-level operating instructions for agents working in this repository.
 - `app/globals.css` -> `app/globals.css`: Global visual system for the TAM viewer pages.
 - `app/layout.tsx` -> `app/layout.tsx`: Shared HTML shell and metadata for the Next.js app.
+- `app/tam/product-machine-groups.tsx` -> `app/tam/product-machine-groups.tsx`: Client-side product machine grouping tabs with collapse and table-delete controls.
 - `app/tam/tam-table.tsx` -> `app/tam/tam-table.tsx`: Client-side TAM table with sorting, pagination, inline editing, and row-image controls.
 - `docs/agents/README.md` -> `docs/agents/README.md`: Agent-specific onboarding, flow overview, and maintenance rules.
 - `docs/agents/chat-handoff.md` -> `docs/agents/chat-handoff.md`: Generated handoff note with current validation status and changed-file inventory.
@@ -41,7 +42,7 @@
 ## API Routes
 
 - `/api/tam/datasets/[dataset]/images` -> `app/api/tam/datasets/[dataset]/images/route.ts`: Upload and delete endpoints for manual row images stored alongside the dataset snapshot.
-- `/api/tam/datasets/[dataset]/sheet` -> `app/api/tam/datasets/[dataset]/sheet/route.ts`: Mutation endpoint for inline cell edits and dynamic column creation.
+- `/api/tam/datasets/[dataset]/sheet` -> `app/api/tam/datasets/[dataset]/sheet/route.ts`: Mutation endpoint for sheet edits, column management, and product-category table deletion.
 
 ## TAM Library
 
@@ -68,6 +69,7 @@
 
 - `tests/importer.test.ts` -> `tests/importer.test.ts`: Covers workbook parsing, sheet fallback behavior, and deterministic snapshot output.
 - `tests/loadSnapshot.test.ts` -> `tests/loadSnapshot.test.ts`: Covers missing, malformed, and valid snapshot loading states.
+- `tests/product-machine-groups.test.tsx` -> `tests/product-machine-groups.test.tsx`: Covers deleting machine-grouped product table pills and cancellation behavior.
 - `tests/productSheets.test.ts` -> `tests/productSheets.test.ts`: Covers product-category table derivation, image remapping, and query-key uniqueness.
 - `tests/tam-table.test.tsx` -> `tests/tam-table.test.tsx`: Covers table rendering, local edits, sorting, pagination, and image controls.
 

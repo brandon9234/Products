@@ -35,6 +35,8 @@ const AGENT_FILE_SUMMARIES: SummaryMap = {
     "Generated inventory of the repo's high-signal files, commands, and repo-local skills.",
   "app/layout.tsx": "Shared HTML shell and metadata for the Next.js app.",
   "app/globals.css": "Global visual system for the TAM viewer pages.",
+  "app/tam/product-machine-groups.tsx":
+    "Client-side product machine grouping tabs with collapse and table-delete controls.",
   "app/tam/tam-table.tsx":
     "Client-side TAM table with sorting, pagination, inline editing, and row-image controls."
 };
@@ -49,7 +51,7 @@ const API_SUMMARIES: SummaryMap = {
   "app/api/tam/datasets/[dataset]/images/route.ts":
     "Upload and delete endpoints for manual row images stored alongside the dataset snapshot.",
   "app/api/tam/datasets/[dataset]/sheet/route.ts":
-    "Mutation endpoint for inline cell edits and dynamic column creation."
+    "Mutation endpoint for sheet edits, column management, and product-category table deletion."
 };
 
 const LIB_SUMMARIES: SummaryMap = {
@@ -93,6 +95,8 @@ const TEST_SUMMARIES: SummaryMap = {
     "Covers workbook parsing, sheet fallback behavior, and deterministic snapshot output.",
   "tests/loadSnapshot.test.ts":
     "Covers missing, malformed, and valid snapshot loading states.",
+  "tests/product-machine-groups.test.tsx":
+    "Covers deleting machine-grouped product table pills and cancellation behavior.",
   "tests/productSheets.test.ts":
     "Covers product-category table derivation, image remapping, and query-key uniqueness.",
   "tests/tam-table.test.tsx":

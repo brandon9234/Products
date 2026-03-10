@@ -138,6 +138,7 @@ export default async function TamPage({ searchParams }: TamPageProps) {
             ) : null}
             {productSheets.length > 0 ? (
               <ProductMachineGroups
+                datasetId="tam"
                 productSheetsByMachine={productSheetsByMachine}
                 selectedProductQueryKey={selectedProductSheet?.queryKey}
               />
