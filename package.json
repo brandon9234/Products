@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "import:tam": "tsx scripts/import-tam.ts",
-    "import:tam:2": "tsx scripts/import-tam.ts --input data/raw/tam-2.xlsx --output data/tam-2.snapshot.json"
+    "predev": "scripts\\run-node.cmd -e \"require('node:fs').rmSync('.next', { recursive: true, force: true })\"",
+    "dev": "scripts\\run-next.cmd dev",
+    "build": "scripts\\run-next.cmd build",
+    "start": "scripts\\run-next.cmd start",
+    "lint": "scripts\\run-next.cmd lint",
+    "agent:refresh": "scripts\\run-node.cmd scripts\\agent-docs.ts write",
+    "agent:check": "scripts\\run-node.cmd scripts\\agent-docs.ts check",
+    "test": "scripts\\run-test.cmd",
+    "test:unit": "scripts\\run-vitest.cmd run",
+    "test:watch": "scripts\\run-vitest.cmd",
+    "import:tam": "scripts\\run-tsx.cmd scripts\\import-tam.ts",
+    "handoff": "scripts\\run-node.cmd scripts\\prepare-chat-handoff.ts"
   },
   "dependencies": {
     "next": "15.2.4",

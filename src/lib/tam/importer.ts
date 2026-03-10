@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import * as XLSX from "xlsx";
@@ -12,6 +12,7 @@ import type {
 } from "./types";
 
 export const DEFAULT_SHEET_NAME = "TAM";
+const AUTO_GENERATED_COLUMN_NAME_PATTERN = /^Column \d+(?: \(\d+\))?$/;
 
 interface BuildSnapshotOptions {
   workbook: XLSX.WorkBook;
@@ -40,6 +41,17 @@ interface WorkbookFileEntry {
 
 interface WorkbookFileContainer {
   files?: Record<string, WorkbookFileEntry>;
+}
+
+interface WorkbookSheetMeta {
+  name?: string;
+  sheetId?: string | number;
+  sheetid?: string | number;
+}
+
+interface SheetBuildResult {
+  snapshot: TamSheetSnapshot;
+  worksheetRowToSnapshotRowIndex: Map<number, number>;
 }
 
 export function readWorkbookFromFile(inputPath: string): XLSX.WorkBook {
@@ -81,7 +93,7 @@ export function buildSnapshotFromWorkbook({
     throw new Error(`Unable to read sheet "${selectedSheetName}".`);
   }
 
-  const sheetSnapshot = buildSheetSnapshot(selectedSheetName, sheet);
+  const { snapshot: sheetSnapshot } = buildSheetSnapshot(selectedSheetName, sheet);
 
   return {
     ...sheetSnapshot,
@@ -107,7 +119,7 @@ export function buildWorkbookSnapshotFromWorkbook({
       throw new Error(`Unable to read sheet "${sheetName}".`);
     }
 
-    const sheetSnapshot = buildSheetSnapshot(sheetName, sheet);
+    const { snapshot: sheetSnapshot } = buildSheetSnapshot(sheetName, sheet);
     const sheetImages =
       imagesBySheet?.[sheetName]?.filter(
         (imageRef) =>
@@ -137,134 +149,336 @@ export async function extractWorkbookImages({
   outputDir,
   publicBasePath
 }: ExtractWorkbookImagesOptions): Promise<Record<string, TamImageRef[]>> {
+  // xlsx exposes raw OOXML workbook files, so embedded image extraction has to
+  // walk the worksheet -> drawing -> media relationship chain explicitly.
   const files = getWorkbookFiles(workbook);
-  if (!files) {
-    return {};
-  }
-
-  await rm(outputDir, { recursive: true, force: true });
-  await mkdir(outputDir, { recursive: true });
+  await clearGeneratedAssetOutputDir(outputDir);
 
   const imagesBySheet: Record<string, TamImageRef[]> = {};
   const usedFileNames = new Set<string>();
 
   for (const sheetMeta of resolveSheetMeta(workbook)) {
-    const sheetPath = `xl/worksheets/sheet${sheetMeta.sheetId}.xml`;
-    const sheetXml = getXmlFileContent(files, sheetPath);
-    if (!sheetXml) {
+    const sheet = workbook.Sheets[sheetMeta.name];
+    if (!sheet) {
       continue;
     }
 
-    const drawingRelationshipId = parseDrawingRelationshipId(sheetXml);
-    if (!drawingRelationshipId) {
-      continue;
-    }
-
-    const sheetRelationshipsXml = getXmlFileContent(files, toRelationshipsPath(sheetPath));
-    if (!sheetRelationshipsXml) {
-      continue;
-    }
-
-    const sheetRelationshipMap = parseRelationshipMap(sheetRelationshipsXml);
-    const drawingTarget = sheetRelationshipMap.get(drawingRelationshipId);
-    if (!drawingTarget) {
-      continue;
-    }
-
-    const drawingPath = resolveRelationshipTarget(sheetPath, drawingTarget);
-    const drawingXml = getXmlFileContent(files, drawingPath);
-    if (!drawingXml) {
-      continue;
-    }
-
-    const drawingRelationshipXml = getXmlFileContent(
-      files,
-      toRelationshipsPath(drawingPath)
-    );
-    if (!drawingRelationshipXml) {
-      continue;
-    }
-
-    const drawingRelationshipMap = parseRelationshipMap(drawingRelationshipXml);
-    const anchors = parseDrawingAnchors(drawingXml);
-    if (anchors.length === 0) {
-      continue;
-    }
-
-    const sheetImages: TamImageRef[] = [];
-    const safeSheetName = slugifySegment(sheetMeta.name);
-
-    for (const anchor of anchors) {
-      const mediaTarget = drawingRelationshipMap.get(anchor.embedId);
-      if (!mediaTarget) {
-        continue;
+    const { worksheetRowToSnapshotRowIndex } = buildSheetSnapshot(sheetMeta.name, sheet);
+    const embeddedImages = files
+      ? await extractEmbeddedSheetImages({
+          files,
+          sheetMeta,
+          worksheetRowToSnapshotRowIndex,
+          outputDir,
+          publicBasePath,
+          usedFileNames
+        })
+      : [];
+    const formulaImages = await extractFormulaCellImages({
+      sheet,
+      sheetName: sheetMeta.name,
+      worksheetRowToSnapshotRowIndex,
+      outputDir,
+      publicBasePath,
+      usedFileNames
+    });
+    const sheetImages = [...embeddedImages, ...formulaImages].sort((left, right) => {
+      if (left.rowIndex === right.rowIndex) {
+        return left.colIndex - right.colIndex;
       }
-
-      const mediaPath = resolveRelationshipTarget(drawingPath, mediaTarget);
-      const mediaContent = getBinaryFileContent(files[mediaPath]?.content);
-      if (!mediaContent) {
-        continue;
-      }
-
-      const extension = path.posix.extname(mediaPath) || ".bin";
-      const baseFileName = `${safeSheetName}-r${anchor.row}-c${anchor.col}${extension}`;
-      const outputFileName = makeUniqueFileName(baseFileName, usedFileNames);
-      const outputFilePath = path.join(outputDir, outputFileName);
-      await writeFile(outputFilePath, mediaContent);
-
-      sheetImages.push({
-        rowIndex: anchor.row - 1,
-        colIndex: anchor.col,
-        src: `${publicBasePath}/${encodeURIComponent(outputFileName)}`,
-        fileName: path.posix.basename(mediaPath)
-      });
-    }
+      return left.rowIndex - right.rowIndex;
+    });
 
     if (sheetImages.length > 0) {
-      imagesBySheet[sheetMeta.name] = sheetImages.sort((left, right) => {
-        if (left.rowIndex === right.rowIndex) {
-          return left.colIndex - right.colIndex;
-        }
-        return left.rowIndex - right.rowIndex;
-      });
+      imagesBySheet[sheetMeta.name] = sheetImages;
     }
   }
 
   return imagesBySheet;
 }
 
+async function extractEmbeddedSheetImages({
+  files,
+  sheetMeta,
+  worksheetRowToSnapshotRowIndex,
+  outputDir,
+  publicBasePath,
+  usedFileNames
+}: {
+  files: Record<string, WorkbookFileEntry>;
+  sheetMeta: { name: string; sheetId: number };
+  worksheetRowToSnapshotRowIndex: Map<number, number>;
+  outputDir: string;
+  publicBasePath: string;
+  usedFileNames: Set<string>;
+}): Promise<TamImageRef[]> {
+  const sheetPath = `xl/worksheets/sheet${sheetMeta.sheetId}.xml`;
+  const sheetXml = getXmlFileContent(files, sheetPath);
+  if (!sheetXml) {
+    return [];
+  }
+
+  const drawingRelationshipId = parseDrawingRelationshipId(sheetXml);
+  if (!drawingRelationshipId) {
+    return [];
+  }
+
+  const sheetRelationshipsXml = getXmlFileContent(files, toRelationshipsPath(sheetPath));
+  if (!sheetRelationshipsXml) {
+    return [];
+  }
+
+  const sheetRelationshipMap = parseRelationshipMap(sheetRelationshipsXml);
+  const drawingTarget = sheetRelationshipMap.get(drawingRelationshipId);
+  if (!drawingTarget) {
+    return [];
+  }
+
+  const drawingPath = resolveRelationshipTarget(sheetPath, drawingTarget);
+  const drawingXml = getXmlFileContent(files, drawingPath);
+  if (!drawingXml) {
+    return [];
+  }
+
+  const drawingRelationshipXml = getXmlFileContent(
+    files,
+    toRelationshipsPath(drawingPath)
+  );
+  if (!drawingRelationshipXml) {
+    return [];
+  }
+
+  const drawingRelationshipMap = parseRelationshipMap(drawingRelationshipXml);
+  const anchors = parseDrawingAnchors(drawingXml);
+  if (anchors.length === 0) {
+    return [];
+  }
+
+  const sheetImages: TamImageRef[] = [];
+  const safeSheetName = slugifySegment(sheetMeta.name);
+
+  for (const anchor of anchors) {
+    const snapshotRowIndex = worksheetRowToSnapshotRowIndex.get(anchor.row);
+    if (snapshotRowIndex === undefined) {
+      continue;
+    }
+
+    const mediaTarget = drawingRelationshipMap.get(anchor.embedId);
+    if (!mediaTarget) {
+      continue;
+    }
+
+    const mediaPath = resolveRelationshipTarget(drawingPath, mediaTarget);
+    const mediaContent = getBinaryFileContent(files[mediaPath]?.content);
+    if (!mediaContent) {
+      continue;
+    }
+
+    const extension = path.posix.extname(mediaPath) || ".bin";
+    const baseFileName = `${safeSheetName}-r${anchor.row}-c${anchor.col}${extension}`;
+    const outputFileName = makeUniqueFileName(baseFileName, usedFileNames);
+    const outputFilePath = path.join(outputDir, outputFileName);
+    await writeFile(outputFilePath, mediaContent);
+
+    sheetImages.push({
+      rowIndex: snapshotRowIndex,
+      colIndex: anchor.col,
+      src: `${publicBasePath}/${encodeURIComponent(outputFileName)}`,
+      fileName: path.posix.basename(mediaPath)
+    });
+  }
+
+  return sheetImages;
+}
+
+async function extractFormulaCellImages({
+  sheet,
+  sheetName,
+  worksheetRowToSnapshotRowIndex,
+  outputDir,
+  publicBasePath,
+  usedFileNames
+}: {
+  sheet: XLSX.WorkSheet;
+  sheetName: string;
+  worksheetRowToSnapshotRowIndex: Map<number, number>;
+  outputDir: string;
+  publicBasePath: string;
+  usedFileNames: Set<string>;
+}): Promise<TamImageRef[]> {
+  const sheetRange = sheet["!ref"];
+  if (!sheetRange) {
+    return [];
+  }
+
+  const range = XLSX.utils.decode_range(sheetRange);
+  const safeSheetName = slugifySegment(sheetName);
+  const sheetImages: TamImageRef[] = [];
+
+  for (let rowIndex = Math.max(range.s.r, 1); rowIndex <= range.e.r; rowIndex += 1) {
+    const snapshotRowIndex = worksheetRowToSnapshotRowIndex.get(rowIndex);
+    if (snapshotRowIndex === undefined) {
+      continue;
+    }
+
+    for (let colIndex = range.s.c; colIndex <= range.e.c; colIndex += 1) {
+      const cellAddress = XLSX.utils.encode_cell({ c: colIndex, r: rowIndex });
+      const cell = sheet[cellAddress];
+      const formulaImageUrl = parseImageFormula(cell?.f);
+      if (!formulaImageUrl) {
+        continue;
+      }
+
+      const imageAsset = await persistFormulaImageAsset({
+        sourceUrl: formulaImageUrl,
+        outputDir,
+        publicBasePath,
+        baseFileStem: `${safeSheetName}-r${rowIndex}-c${colIndex}`,
+        usedFileNames
+      });
+
+      sheetImages.push({
+        rowIndex: snapshotRowIndex,
+        colIndex,
+        src: imageAsset.src,
+        fileName: imageAsset.fileName
+      });
+    }
+  }
+
+  return sheetImages;
+}
+
+async function persistFormulaImageAsset({
+  sourceUrl,
+  outputDir,
+  publicBasePath,
+  baseFileStem,
+  usedFileNames
+}: {
+  sourceUrl: string;
+  outputDir: string;
+  publicBasePath: string;
+  baseFileStem: string;
+  usedFileNames: Set<string>;
+}): Promise<{ src: string; fileName: string }> {
+  const fallbackFileName = resolveRemoteFileName(sourceUrl, ".bin");
+
+  try {
+    const response = await fetch(sourceUrl, {
+      headers: {
+        Accept: "image/*,*/*;q=0.8",
+        "User-Agent": "Products-TAM-Importer/1.0"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Image download failed: ${response.status}`);
+    }
+
+    const buffer = Buffer.from(await response.arrayBuffer());
+    if (buffer.length === 0) {
+      throw new Error("Image download returned an empty body.");
+    }
+
+    const extension = resolveRemoteImageExtension(
+      sourceUrl,
+      response.headers.get("content-type")
+    );
+    const outputFileName = makeUniqueFileName(
+      `${baseFileStem}${extension}`,
+      usedFileNames
+    );
+    const outputFilePath = path.join(outputDir, outputFileName);
+    await writeFile(outputFilePath, buffer);
+
+    return {
+      src: `${publicBasePath}/${encodeURIComponent(outputFileName)}`,
+      fileName: resolveRemoteFileName(sourceUrl, extension)
+    };
+  } catch {
+    return {
+      src: sourceUrl,
+      fileName: fallbackFileName
+    };
+  }
+}
+
 function buildSheetSnapshot(
   sheetName: string,
   sheet: XLSX.WorkSheet
-): TamSheetSnapshot {
+) : SheetBuildResult {
   const matrix = XLSX.utils.sheet_to_json(sheet, {
     header: 1,
     raw: true,
-    blankrows: false,
+    blankrows: true,
     defval: null
   }) as unknown[][];
 
   if (matrix.length === 0) {
     return {
-      name: sheetName,
-      columns: [],
-      rows: [],
-      rowCount: 0
+      snapshot: {
+        name: sheetName,
+        columns: [],
+        rows: [],
+        rowCount: 0
+      },
+      worksheetRowToSnapshotRowIndex: new Map()
     };
   }
 
-  const [headerRow, ...dataRows] = matrix;
+  const [headerRow, ...worksheetRows] = matrix;
   const columns = normalizeHeaders(headerRow);
-  const rows = dataRows.map((row) =>
-    buildRow(columns, Array.isArray(row) ? row : [])
-  );
+  const rows: TamRow[] = [];
+  const worksheetRowToSnapshotRowIndex = new Map<number, number>();
+
+  worksheetRows.forEach((row, worksheetRowOffset) => {
+    const normalizedRow = Array.isArray(row) ? row : [];
+    const worksheetRowIndex = worksheetRowOffset + 1;
+
+    if (isEmptyWorksheetRow(normalizedRow) && !hasImageFormulaInWorksheetRow(sheet, worksheetRowIndex)) {
+      return;
+    }
+
+    worksheetRowToSnapshotRowIndex.set(worksheetRowIndex, rows.length);
+    rows.push(buildRow(columns, normalizedRow));
+  });
+
+  const { columns: sanitizedColumns, rows: sanitizedRows } =
+    shouldDropEmptyGeneratedColumns(sheetName)
+      ? dropEmptyGeneratedColumns(columns, rows)
+      : { columns, rows };
 
   return {
-    name: sheetName,
-    columns,
-    rows,
-    rowCount: rows.length
+    snapshot: {
+      name: sheetName,
+      columns: sanitizedColumns,
+      rows: sanitizedRows,
+      rowCount: sanitizedRows.length
+    },
+    worksheetRowToSnapshotRowIndex
   };
+}
+
+function isEmptyWorksheetRow(row: unknown[]): boolean {
+  return row.every((value) => normalizeCell(value) === null);
+}
+
+function hasImageFormulaInWorksheetRow(sheet: XLSX.WorkSheet, worksheetRowIndex: number): boolean {
+  const sheetRange = sheet["!ref"];
+  if (!sheetRange) {
+    return false;
+  }
+
+  const range = XLSX.utils.decode_range(sheetRange);
+  for (let colIndex = range.s.c; colIndex <= range.e.c; colIndex += 1) {
+    const cellAddress = XLSX.utils.encode_cell({ c: colIndex, r: worksheetRowIndex });
+    if (parseImageFormula(sheet[cellAddress]?.f)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function normalizeHeaders(headerRow: unknown[]): string[] {
@@ -282,6 +496,49 @@ function normalizeHeaders(headerRow: unknown[]): string[] {
 
     return `${baseName} (${suffixCount + 1})`;
   });
+}
+
+function shouldDropEmptyGeneratedColumns(sheetName: string): boolean {
+  return sheetName !== "Substrates";
+}
+
+function dropEmptyGeneratedColumns(
+  columns: string[],
+  rows: TamRow[]
+): { columns: string[]; rows: TamRow[] } {
+  const removableColumns = new Set(
+    columns.filter(
+      (column) =>
+        AUTO_GENERATED_COLUMN_NAME_PATTERN.test(column) &&
+        rows.every((row) => isBlankPrimitive(row[column]))
+    )
+  );
+
+  if (removableColumns.size === 0) {
+    return { columns, rows };
+  }
+
+  const nextColumns = columns.filter((column) => !removableColumns.has(column));
+  const nextRows = rows.map((row) => {
+    const nextRow: TamRow = {};
+    for (const column of nextColumns) {
+      nextRow[column] = column in row ? row[column] : null;
+    }
+    return nextRow;
+  });
+
+  return {
+    columns: nextColumns,
+    rows: nextRows
+  };
+}
+
+function isBlankPrimitive(value: TamPrimitive): boolean {
+  if (value === null) {
+    return true;
+  }
+
+  return typeof value === "string" && value.trim().length === 0;
 }
 
 function buildRow(columns: string[], rawRow: unknown[]): TamRow {
@@ -328,6 +585,19 @@ function normalizePath(filePath: string): string {
   return filePath.replace(/\\/g, "/");
 }
 
+async function clearGeneratedAssetOutputDir(outputDir: string): Promise<void> {
+  await mkdir(outputDir, { recursive: true });
+  const entries = await readdir(outputDir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    if (entry.name === "manual") {
+      continue;
+    }
+
+    await rm(path.join(outputDir, entry.name), { recursive: true, force: true });
+  }
+}
+
 function getWorkbookFiles(
   workbook: XLSX.WorkBook
 ): Record<string, WorkbookFileEntry> | null {
@@ -336,7 +606,7 @@ function getWorkbookFiles(
 }
 
 function resolveSheetMeta(workbook: XLSX.WorkBook): Array<{ name: string; sheetId: number }> {
-  const workbookSheetMeta = workbook.Workbook?.Sheets ?? [];
+  const workbookSheetMeta = (workbook.Workbook?.Sheets ?? []) as WorkbookSheetMeta[];
   if (workbookSheetMeta.length > 0) {
     const parsed = workbookSheetMeta
       .map((sheetMeta, index) => ({
@@ -391,6 +661,15 @@ function getBinaryFileContent(content: unknown): Buffer | null {
 
 function parseDrawingRelationshipId(sheetXml: string): string | null {
   const match = /<drawing\b[^>]*\br:id="([^"]+)"/.exec(sheetXml);
+  return match?.[1] ?? null;
+}
+
+function parseImageFormula(formula: unknown): string | null {
+  if (typeof formula !== "string") {
+    return null;
+  }
+
+  const match = /^\s*=?image\s*\(\s*"([^"]+)"/i.exec(formula);
   return match?.[1] ?? null;
 }
 
@@ -473,6 +752,58 @@ function slugifySegment(value: string): string {
     .replace(/^-+|-+$/g, "");
 
   return sanitized.length > 0 ? sanitized : "sheet";
+}
+
+function resolveRemoteImageExtension(sourceUrl: string, contentType: string | null): string {
+  const urlExtension = getUrlExtension(sourceUrl);
+  if (urlExtension) {
+    return urlExtension;
+  }
+
+  const normalizedContentType = contentType?.split(";")[0]?.trim().toLowerCase() ?? null;
+
+  if (normalizedContentType === "image/jpeg") {
+    return ".jpg";
+  }
+  if (normalizedContentType === "image/png") {
+    return ".png";
+  }
+  if (normalizedContentType === "image/webp") {
+    return ".webp";
+  }
+  if (normalizedContentType === "image/gif") {
+    return ".gif";
+  }
+
+  return ".bin";
+}
+
+function resolveRemoteFileName(sourceUrl: string, fallbackExtension: string): string {
+  try {
+    const parsedUrl = new URL(sourceUrl);
+    const fileName = path.posix.basename(parsedUrl.pathname);
+    if (fileName) {
+      return fileName;
+    }
+  } catch {
+    return `image${fallbackExtension}`;
+  }
+
+  return `image${fallbackExtension}`;
+}
+
+function getUrlExtension(sourceUrl: string): string | null {
+  try {
+    const parsedUrl = new URL(sourceUrl);
+    const extension = path.posix.extname(parsedUrl.pathname).toLowerCase();
+    if ([".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".svg"].includes(extension)) {
+      return extension;
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
 }
 
 function makeUniqueFileName(baseFileName: string, usedFileNames: Set<string>): string {

@@ -4,10 +4,23 @@ Local/internal Next.js app for importing and viewing Total Addressable Market (T
 Embedded workbook images are extracted and shown as row thumbnails in the table.
 The UI supports inline editing, image upload per row, and adding new columns.
 
+## Agent Workflow
+
+- Read `AGENTS.md` and `docs/agents/README.md` before making structural changes.
+- Refresh the generated repo inventory with `npm run agent:refresh` after changing routes, scripts, tests, package scripts, or skill files.
+- Validate agent artifacts with `npm run agent:check`.
+- Use `npm run handoff` when preparing the repo for a new chat context.
+- Repo-local skills live in `skills/tam-repo-maintainer/` and `skills/chat-handoff/`.
+
 ## Prerequisites
 
 - Node.js 20+
 - npm 10+
+- On Windows, avoid installing/running this project directly from Google Drive or other synced folders.
+  `npm install` can fail there with tar extraction/write errors and leave `node_modules` or `.next`
+  in a broken state. If that happens, work from a local path such as `C:\Temp\ProductsPreview`.
+- The repo command wrappers now fail with a specific recovery message when `next`, `vitest`, or
+  `tsx` are unavailable because of a broken synced install.
 
 ## Setup
 
@@ -28,8 +41,7 @@ The UI supports inline editing, image upload per row, and adding new columns.
    ```
 5. Open:
    - Home: `http://localhost:3000`
-   - TAM 1 table: `http://localhost:3000/tam`
-   - TAM 2 table: `http://localhost:3000/tam-2`
+   - TAM table: `http://localhost:3000/tam`
 
 Each page supports worksheet tabs via query param, for example:
 
@@ -49,14 +61,6 @@ npm run import:tam -- --input <path> --sheet <name?> --output <path?>
 - `--output`: optional output snapshot path (default: `data/tam.snapshot.json`).
 - Embedded worksheet images are automatically extracted to `public/tam-assets/<dataset>/` and linked in each row.
 
-Second dataset helper command:
-
-```bash
-npm run import:tam:2
-```
-
-This expects `data/raw/tam-2.xlsx` and writes `data/tam-2.snapshot.json`.
-
 ## Snapshot Contract
 
 `data/tam.snapshot.json`:
@@ -72,6 +76,12 @@ Run:
 
 ```bash
 npm test
+```
+
+Agent-only checks can also be run directly:
+
+```bash
+npm run agent:check
 ```
 
 Coverage includes:

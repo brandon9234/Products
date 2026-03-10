@@ -59,6 +59,8 @@ function parseSnapshot(value: unknown): TamWorkbookSnapshot | null {
     return null;
   }
 
+  // Accept both the current workbook-wide snapshot and the older single-sheet
+  // snapshot so existing data files remain readable during upgrades.
   const workbook = parseWorkbookSnapshot(value);
   if (workbook) {
     return workbook;

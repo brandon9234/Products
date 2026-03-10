@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chat Handoff"
+  short_description: "Prepare repo state for chat handoffs"
+  default_prompt: "Use $chat-handoff to refresh validation and leave the repo ready for the next chat."

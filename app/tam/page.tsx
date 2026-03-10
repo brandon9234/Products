@@ -2,13 +2,18 @@ import Link from "next/link";
 import path from "node:path";
 
 import { loadTamSnapshot } from "@/src/lib/tam/loadSnapshot";
+import {
+  buildDerivedProductSheets,
+  buildProductSheetsByMachine
+} from "@/src/lib/tam/productSheets";
 
-import { TamTable } from "./tam-table";
+import ProductMachineGroups from "./product-machine-groups";
+import TamTable from "./tam-table";
 
 interface TamPageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     sheet?: string | string[];
-  };
+  }>;
 }
 
 export default async function TamPage({ searchParams }: TamPageProps) {
@@ -17,25 +22,17 @@ export default async function TamPage({ searchParams }: TamPageProps) {
 
   if (result.status === "missing") {
     return (
-      <main className="page-shell">
+      <main className="page-shell page-shell-wide">
         <section className="message-card">
-          <div className="tab-nav">
-            <Link href="/tam" className="tab-link active">
-              TAM 1
-            </Link>
-            <Link href="/tam-2" className="tab-link">
-              TAM 2
-            </Link>
-          </div>
           <h1>TAM Snapshot Not Found</h1>
           <p>
             Create <code>{snapshotPath}</code> by running:
           </p>
           <pre>
-            <code>npm run import:tam -- --input "data/raw/tam.xlsx" --sheet TAM</code>
+            <code>npm run import:tam -- --input &quot;data/raw/tam.xlsx&quot; --sheet TAM</code>
           </pre>
           <p>
-            If your export is CSV, use <code>--input "data/raw/tam.csv"</code>.
+            If your export is CSV, use <code>--input &quot;data/raw/tam.csv&quot;</code>.
           </p>
           <Link href="/" className="secondary-link">
             Back to home
@@ -47,16 +44,8 @@ export default async function TamPage({ searchParams }: TamPageProps) {
 
   if (result.status === "malformed") {
     return (
-      <main className="page-shell">
+      <main className="page-shell page-shell-wide">
         <section className="message-card">
-          <div className="tab-nav">
-            <Link href="/tam" className="tab-link active">
-              TAM 1
-            </Link>
-            <Link href="/tam-2" className="tab-link">
-              TAM 2
-            </Link>
-          </div>
           <h1>TAM Snapshot Is Malformed</h1>
           <p>
             <strong>Path:</strong> <code>{result.snapshotPath}</code>
@@ -66,7 +55,7 @@ export default async function TamPage({ searchParams }: TamPageProps) {
           </p>
           <p>Re-run import to regenerate a clean snapshot.</p>
           <pre>
-            <code>npm run import:tam -- --input "data/raw/tam.xlsx" --sheet TAM</code>
+            <code>npm run import:tam -- --input &quot;data/raw/tam.xlsx&quot; --sheet TAM</code>
           </pre>
           <Link href="/" className="secondary-link">
             Back to home
@@ -76,8 +65,21 @@ export default async function TamPage({ searchParams }: TamPageProps) {
     );
   }
 
-  const requestedSheet = toQueryValue(searchParams?.sheet);
-  const selectedSheet =
+  const resolvedSearchParams = await searchParams;
+  const requestedSheet = toQueryValue(resolvedSearchParams?.sheet);
+  const substratesSheet = result.snapshot.sheets.find((sheet) => sheet.name === "Substrates");
+  const materialSheets = result.snapshot.sheets.filter((sheet) => sheet.name !== "Substrates");
+  const { productSheets, productCategoryToQueryKey } = buildDerivedProductSheets(
+    result.snapshot.sheets
+  );
+  const productSheetsByMachine = buildProductSheetsByMachine(productSheets);
+  const productSheetsByQueryKey = new Map(
+    productSheets.map((sheet) => [sheet.queryKey, sheet] as const)
+  );
+  const selectedProductSheet = requestedSheet
+    ? productSheetsByQueryKey.get(requestedSheet)
+    : undefined;
+  const selectedWorkbookSheet =
     result.snapshot.sheets.find((sheet) => sheet.name === requestedSheet) ??
     result.snapshot.sheets.find((sheet) => sheet.name === result.snapshot.defaultSheet) ??
     result.snapshot.sheets[0] ?? {
@@ -86,6 +88,8 @@ export default async function TamPage({ searchParams }: TamPageProps) {
       rows: [],
       rowCount: 0
     };
+  const selectedSheet = selectedProductSheet ?? selectedWorkbookSheet;
+  const isProductView = Boolean(selectedProductSheet);
 
   const tableSnapshot = {
     ...selectedSheet,
@@ -94,39 +98,62 @@ export default async function TamPage({ searchParams }: TamPageProps) {
   };
 
   return (
-    <main className="page-shell">
+    <main className="page-shell page-shell-wide">
       <section className="tam-header">
         <div>
           <p className="eyebrow">Data Source</p>
-          <h1>Total Addressable Market - TAM 1</h1>
+          <h1>Total Addressable Market</h1>
           <p>
             Snapshot file: <code>{result.snapshot.sourceFile}</code>
           </p>
-          <div className="tab-nav">
-            <Link href="/tam" className="tab-link active">
-              TAM 1
-            </Link>
-            <Link href="/tam-2" className="tab-link">
-              TAM 2
-            </Link>
-          </div>
-          <div className="tab-nav">
-            {result.snapshot.sheets.map((sheet) => (
-              <Link
-                key={sheet.name}
-                href={`/tam?sheet=${encodeURIComponent(sheet.name)}`}
-                className={`tab-link ${sheet.name === selectedSheet.name ? "active" : ""}`}
-              >
-                {sheet.name}
-              </Link>
-            ))}
+          <div className="sheet-groups">
+            {substratesSheet ? (
+              <section className="sheet-group">
+                <p className="sheet-group-title">Substrates</p>
+                <div className="tab-nav">
+                  <Link
+                    href={`/tam?sheet=${encodeURIComponent(substratesSheet.name)}`}
+                    className={`tab-link ${substratesSheet.name === selectedSheet.name ? "active" : ""}`}
+                  >
+                    {substratesSheet.name}
+                  </Link>
+                </div>
+              </section>
+            ) : null}
+            {materialSheets.length > 0 ? (
+              <section className="sheet-group">
+                <p className="sheet-group-title">Materials</p>
+                <div className="tab-nav">
+                  {materialSheets.map((sheet) => (
+                    <Link
+                      key={sheet.name}
+                      href={`/tam?sheet=${encodeURIComponent(sheet.name)}`}
+                      className={`tab-link ${sheet.name === selectedSheet.name ? "active" : ""}`}
+                    >
+                      {sheet.name}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+            {productSheets.length > 0 ? (
+              <ProductMachineGroups
+                productSheetsByMachine={productSheetsByMachine}
+                selectedProductQueryKey={selectedProductSheet?.queryKey}
+              />
+            ) : null}
           </div>
         </div>
         <Link href="/" className="secondary-link">
           Home
         </Link>
       </section>
-      <TamTable datasetId="tam" snapshot={tableSnapshot} />
+      <TamTable
+        datasetId="tam"
+        snapshot={tableSnapshot}
+        readOnly={isProductView}
+        productCategoryToQueryKey={productCategoryToQueryKey}
+      />
     </main>
   );
 }

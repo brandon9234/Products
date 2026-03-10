@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { NextRequest, NextResponse } from "next/server";
@@ -28,7 +28,7 @@ export async function POST(
     }
 
     const rowIndex = parseInt(rowIndexRaw, 10);
-    if (!Number.isInteger(rowIndex) || rowIndex < 0) {
+    if (typeof rowIndex !== "number" || !Number.isInteger(rowIndex) || rowIndex < 0) {
       throw new Error("rowIndex must be a valid integer.");
     }
 
@@ -78,6 +78,65 @@ export async function POST(
   }
 }
 
+export async function DELETE(
+  request: NextRequest,
+  context: { params: Promise<{ dataset: string }> }
+) {
+  const { dataset } = await context.params;
+
+  try {
+    const body = (await request.json()) as {
+      sheetName?: string;
+      rowIndex?: number;
+      src?: string;
+    };
+    const sheetName = body.sheetName?.trim();
+    const rowIndex = body.rowIndex;
+    const src = body.src?.trim();
+
+    if (!sheetName) {
+      throw new Error("sheetName is required.");
+    }
+
+    if (typeof rowIndex !== "number" || !Number.isInteger(rowIndex) || rowIndex < 0) {
+      throw new Error("rowIndex must be a valid integer.");
+    }
+
+    if (!src) {
+      throw new Error("src is required.");
+    }
+
+    const { snapshot, snapshotPath } = await readDatasetSnapshot(dataset);
+    const sheet = getSheet(snapshot.sheets, sheetName);
+    const imageIndex =
+      sheet.images?.findIndex((imageRef) => imageRef.rowIndex === rowIndex && imageRef.src === src) ??
+      -1;
+
+    if (imageIndex < 0 || !sheet.images) {
+      throw new Error("Image not found.");
+    }
+
+    const [removedImage] = sheet.images.splice(imageIndex, 1);
+    if (sheet.images.length === 0) {
+      delete sheet.images;
+    }
+
+    snapshot.generatedAt = new Date().toISOString();
+    await writeDatasetSnapshot(snapshotPath, snapshot);
+
+    if (!isImageReferenced(snapshot.sheets, removedImage.src)) {
+      await tryDeletePublicAsset(removedImage.src);
+    }
+
+    return NextResponse.json({ sheet });
+  } catch (error) {
+    return NextResponse.json(
+      { error: (error as Error).message },
+      { status: 400 }
+    );
+  }
+}
+
 function getSheet(sheets: TamSheetSnapshot[], sheetName: string): TamSheetSnapshot {
   const sheet = sheets.find((entry) => entry.name === sheetName);
   if (!sheet) {
@@ -105,3 +164,38 @@ function resolveImageExtension(fileName: string, mimeType: string): string {
   return ".bin";
 }
 
+function isImageReferenced(sheets: TamSheetSnapshot[], src: string): boolean {
+  return sheets.some((sheet) => sheet.images?.some((imageRef) => imageRef.src === src));
+}
+
+async function tryDeletePublicAsset(src: string): Promise<void> {
+  const assetPath = resolvePublicAssetPath(src);
+  if (!assetPath) {
+    return;
+  }
+
+  try {
+    await unlink(assetPath);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+      return;
+    }
+  }
+}
+
+function resolvePublicAssetPath(src: string): string | null {
+  const cleanSrc = src.split("?")[0]?.split("#")[0] ?? src;
+  if (!cleanSrc.startsWith("/tam-assets/")) {
+    return null;
+  }
+
+  const publicRoot = path.resolve(process.cwd(), "public");
+  const relativeAssetPath = decodeURIComponent(cleanSrc.replace(/^\/+/, ""));
+  const assetPath = path.resolve(publicRoot, relativeAssetPath);
+
+  if (!assetPath.startsWith(`${publicRoot}${path.sep}`)) {
+    return null;
+  }
+
+  return assetPath;
+}

@@ -644,7 +644,6 @@
       "name": "Acrylic",
       "columns": [
         "Product Category",
-        "Column 2",
         "Machine used For Production",
         "Specific Substrate",
         "Uses Raster file for Customization",
@@ -658,7 +657,6 @@
       "rows": [
         {
           "Product Category": "Corporate Wall Plaque/Lobby Sign",
-          "Column 2": null,
           "Machine used For Production": "1. CO2 laser 2. CNC router 3. UV Flatbed printer",
           "Specific Substrate": "Cast acrylic; clear, frosted, white black, or PMS colored acrylic. (Optional: standoffs: aluminum, stainless steel, brass))",
           "Uses Raster file for Customization": "Yes",
@@ -671,7 +669,6 @@
         },
         {
           "Product Category": "Backlite Wall Plaque/Lobby Sign",
-          "Column 2": null,
           "Machine used For Production": "1. CNC router, 2. CO2 laser, 3. UV Flatbed printer",
           "Specific Substrate": "Cast acrylic, opal acrylic, clear acrylic, Aluminum composit panel.",
           "Uses Raster file for Customization": "Yes",
@@ -684,7 +681,6 @@
         },
         {
           "Product Category": "Etched/engraved Art",
-          "Column 2": null,
           "Machine used For Production": "1. CO2 laser, CNC router,",
           "Specific Substrate": "Cast acrylic, Clear acrylic, colored cast acrylic.",
           "Uses Raster file for Customization": "Yes",
@@ -697,7 +693,6 @@
         },
         {
           "Product Category": "Printed wall art/photos",
-          "Column 2": null,
           "Machine used For Production": "1. UV Flatbed printer, 2. CNC router 3. Optional laser cutter",
           "Specific Substrate": "Cast or extruded acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -710,7 +705,6 @@
         },
         {
           "Product Category": "Custom-Shape Acrylic Wall Art",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -723,7 +717,6 @@
         },
         {
           "Product Category": "Multi panel/modular wall art",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -736,7 +729,6 @@
         },
         {
           "Product Category": "3-D/Layered Signs",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -749,7 +741,6 @@
         },
         {
           "Product Category": "Edge-lit panels",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -762,7 +753,6 @@
         },
         {
           "Product Category": "Lightbox face panels",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -775,7 +765,6 @@
         },
         {
           "Product Category": "Hanging decor signs",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -788,7 +777,6 @@
         },
         {
           "Product Category": "Acrylic lettering",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer (optional)",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -801,7 +789,6 @@
         },
         {
           "Product Category": "T-Shape, L-Shaped, & Tent Engraved upright table sign (wifi, menu, QR codes)",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -814,7 +801,6 @@
         },
         {
           "Product Category": "Desk name plates/blocks",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrlic",
           "Uses Raster file for Customization": "Yes",
@@ -827,7 +813,6 @@
         },
         {
           "Product Category": "T-Shape desk photos & quotes",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic, potential mixed media bases (wood, metal)",
           "Uses Raster file for Customization": "Yes",
@@ -840,7 +825,6 @@
         },
         {
           "Product Category": "Photo Blocks & Upright plaques",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic, backers, optional layered acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -853,7 +837,6 @@
         },
         {
           "Product Category": "Award trophies",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic. Potential mixed media bases (wood, metal), optional layered acrylic",
           "Uses Raster file for Customization": null,
@@ -866,7 +849,6 @@
         },
         {
           "Product Category": "Achievement plaques",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "Cast acrylic, optional layered acrylic, potential wall mounts or wooden back",
           "Uses Raster file for Customization": "Yes",
@@ -879,7 +861,6 @@
         },
         {
           "Product Category": "Jewelry",
-          "Column 2": null,
           "Machine used For Production": "CO2 laser, UV Flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -892,7 +873,6 @@
         },
         {
           "Product Category": "Photo Stand",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "Yes",
@@ -905,7 +885,6 @@
         },
         {
           "Product Category": "Table Numbers",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -918,7 +897,6 @@
         },
         {
           "Product Category": "Reservation signs",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -931,7 +909,6 @@
         },
         {
           "Product Category": "Buffet food labels",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -944,7 +921,6 @@
         },
         {
           "Product Category": "ADA signs (Americans with disabilities)",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer (optional brail insertion tools)",
           "Specific Substrate": "cast acrylic, Matte or non-glare finishes",
           "Uses Raster file for Customization": "yes",
@@ -957,7 +933,6 @@
         },
         {
           "Product Category": "Name tags",
-          "Column 2": null,
           "Machine used For Production": "CO2 laser, UV Flatbed printer, optional rotary engraver",
           "Specific Substrate": "cast acrylic (also magnets/pins)",
           "Uses Raster file for Customization": "yes",
@@ -970,7 +945,6 @@
         },
         {
           "Product Category": "Art and Museum Placards",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, (optional anti-glare finishes)",
           "Uses Raster file for Customization": "yes",
@@ -983,7 +957,6 @@
         },
         {
           "Product Category": "Custom Engraved acrylic Equipment Nameplates",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -996,7 +969,6 @@
         },
         {
           "Product Category": "Puzzles",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1009,7 +981,6 @@
         },
         {
           "Product Category": "Customized Calendar",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1022,7 +993,6 @@
         },
         {
           "Product Category": "Custom dry-erase board",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic (optional layered acrylic)",
           "Uses Raster file for Customization": "yes",
@@ -1035,7 +1005,6 @@
         },
         {
           "Product Category": "Large engraved menu/behind-bar sinage",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic (option for different bases of wood or metal)",
           "Uses Raster file for Customization": "yes",
@@ -1048,7 +1017,6 @@
         },
         {
           "Product Category": "Standoff-mounted office door sign",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1061,7 +1029,6 @@
         },
         {
           "Product Category": "Engraved Graphic Panel",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1074,7 +1041,6 @@
         },
         {
           "Product Category": "L-Shape/T-Shape/Tent/Six-Sided Vertical sign holders (customize base)",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic (option for different bases of wood or metal)",
           "Uses Raster file for Customization": "yes",
@@ -1087,7 +1053,6 @@
         },
         {
           "Product Category": "Display label (L-Shaped, T-Shaped) and Tent)",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1100,7 +1065,6 @@
         },
         {
           "Product Category": "Keychain",
-          "Column 2": null,
           "Machine used For Production": "CO2 laser, UV flatbed printer",
           "Specific Substrate": "cast acrylic, metal split rings, chains, or hooks",
           "Uses Raster file for Customization": "yes",
@@ -1113,7 +1077,6 @@
         },
         {
           "Product Category": "Acrylic Magnets",
-          "Column 2": null,
           "Machine used For Production": "CO2 laser, UV flatbed printer",
           "Specific Substrate": "cast acrylic, magnets",
           "Uses Raster file for Customization": "yes",
@@ -1126,7 +1089,6 @@
         },
         {
           "Product Category": "Ornaments",
-          "Column 2": null,
           "Machine used For Production": "CO2 laser, UV flatbed printer",
           "Specific Substrate": "cast acrylic, ribbon",
           "Uses Raster file for Customization": "yes",
@@ -1139,7 +1101,6 @@
         },
         {
           "Product Category": "Upright graduation plaque",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, optional to switch base with wood or metal",
           "Uses Raster file for Customization": "yes",
@@ -1152,7 +1113,6 @@
         },
         {
           "Product Category": "Custom Retail point-of-sale displays",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1165,7 +1125,6 @@
         },
         {
           "Product Category": "Brochure Holders",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1178,7 +1137,6 @@
         },
         {
           "Product Category": "Acrylic backdrop",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1191,7 +1149,6 @@
         },
         {
           "Product Category": "Recognition wall tiles",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, mounting hardware",
           "Uses Raster file for Customization": "yes",
@@ -1204,7 +1161,6 @@
         },
         {
           "Product Category": "Custom coaster sets",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, rubber or cork backing",
           "Uses Raster file for Customization": "yes",
@@ -1217,7 +1173,6 @@
         },
         {
           "Product Category": "Custom hangers",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, hooks",
           "Uses Raster file for Customization": "yes",
@@ -1230,7 +1185,6 @@
         },
         {
           "Product Category": "Decorative serving trays",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acyrlic",
           "Uses Raster file for Customization": "yes",
@@ -1243,7 +1197,6 @@
         },
         {
           "Product Category": "Display cubes",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1256,7 +1209,6 @@
         },
         {
           "Product Category": "Wedding signage",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1269,7 +1221,6 @@
         },
         {
           "Product Category": "Pet name tags",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, UV flatbed printer",
           "Specific Substrate": "cast acrylic, split rings or chains",
           "Uses Raster file for Customization": "yes",
@@ -1282,7 +1233,6 @@
         },
         {
           "Product Category": "Promotional cup & straw",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1295,7 +1245,6 @@
         },
         {
           "Product Category": "Bird Feeder",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1308,7 +1257,6 @@
         },
         {
           "Product Category": "Hair Clips",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, UV flatbed printer",
           "Specific Substrate": "cast acrylic, metal clip",
           "Uses Raster file for Customization": "yes",
@@ -1321,7 +1269,6 @@
         },
         {
           "Product Category": "Jewelry Display stands",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic with optional base material of wood or metal",
           "Uses Raster file for Customization": "yes",
@@ -1334,7 +1281,6 @@
         },
         {
           "Product Category": "Hair claw clips",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, UV flatbed printer",
           "Specific Substrate": "cast acrylic, metal springs",
           "Uses Raster file for Customization": "yes",
@@ -1347,7 +1293,6 @@
         },
         {
           "Product Category": "Pendant",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, UV flatbed printer",
           "Specific Substrate": "cast acrylic, optional chain",
           "Uses Raster file for Customization": "yes",
@@ -1360,7 +1305,6 @@
         },
         {
           "Product Category": "Countertop display boxes",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, screws, optional base material of wood or metal",
           "Uses Raster file for Customization": "yes",
@@ -1373,7 +1317,6 @@
         },
         {
           "Product Category": "Phone Stand",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1386,7 +1329,6 @@
         },
         {
           "Product Category": "Business cards holder (mounted, unmounted, and x-shaped stand)",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1399,7 +1341,6 @@
         },
         {
           "Product Category": "Keyboard Riser",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic (optional rubber or adhesive pads)",
           "Uses Raster file for Customization": "yes",
@@ -1412,7 +1353,6 @@
         },
         {
           "Product Category": "Monitor Stand",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic (optional rubber or adhesive pads)",
           "Uses Raster file for Customization": "yes",
@@ -1425,7 +1365,6 @@
         },
         {
           "Product Category": "Clocks",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, clock mechanisms, hands, hanging hardware",
           "Uses Raster file for Customization": "yes",
@@ -1438,7 +1377,6 @@
         },
         {
           "Product Category": "candle holders",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1451,7 +1389,6 @@
         },
         {
           "Product Category": "Custom glow light-boxes",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic, LED light strips, power supply, or mounting components",
           "Uses Raster file for Customization": "yes",
@@ -1464,7 +1401,6 @@
         },
         {
           "Product Category": "Cake Stand",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1477,7 +1413,6 @@
         },
         {
           "Product Category": "Elevated pet-feeder",
-          "Column 2": null,
           "Machine used For Production": "CO2 lasers, CNC router, UV flatbed printer",
           "Specific Substrate": "cast acrylic",
           "Uses Raster file for Customization": "yes",
@@ -1490,7 +1425,6 @@
         },
         {
           "Product Category": null,
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1503,7 +1437,6 @@
         },
         {
           "Product Category": "The items listed below are popular and acrylic. I didn't find any common customize options.",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1516,7 +1449,6 @@
         },
         {
           "Product Category": "Clear file & document holders (mounted & unmounted)",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1529,7 +1461,6 @@
         },
         {
           "Product Category": "Watch Stand",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1542,7 +1473,6 @@
         },
         {
           "Product Category": "Shoe display risers",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1555,7 +1485,6 @@
         },
         {
           "Product Category": "Sunglasses racks",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1568,7 +1497,6 @@
         },
         {
           "Product Category": "Cosmetic shelves/containers",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1581,7 +1509,6 @@
         },
         {
           "Product Category": "Window sign holder with suction cups",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1594,7 +1521,6 @@
         },
         {
           "Product Category": "Multi-tier retail display shelving/risers",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1607,7 +1533,6 @@
         },
         {
           "Product Category": "Floor standing pedestal sign stands",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1620,7 +1545,6 @@
         },
         {
           "Product Category": "Skylight difusers",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1633,7 +1557,6 @@
         },
         {
           "Product Category": "wall mounted shelves",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1646,7 +1569,6 @@
         },
         {
           "Product Category": "Chairs",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1659,7 +1581,6 @@
         },
         {
           "Product Category": "Desks",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1672,7 +1593,6 @@
         },
         {
           "Product Category": "Plant stands",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1685,7 +1605,6 @@
         },
         {
           "Product Category": "coffee table",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1698,7 +1617,6 @@
         },
         {
           "Product Category": "Organization tray",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1711,7 +1629,6 @@
         },
         {
           "Product Category": "Handbag display stand",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1724,7 +1641,6 @@
         },
         {
           "Product Category": "Acrylic Easel display stand",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1737,7 +1653,6 @@
         },
         {
           "Product Category": "Bookstand display",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1750,7 +1665,6 @@
         },
         {
           "Product Category": "Standoff mounted picture Frames/floating frames",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1763,7 +1677,6 @@
         },
         {
           "Product Category": "Free standing Picture frames",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1776,7 +1689,6 @@
         },
         {
           "Product Category": "Wall art panels",
-          "Column 2": null,
           "Machine used For Production": null,
           "Specific Substrate": null,
           "Uses Raster file for Customization": null,
@@ -1786,22 +1698,521 @@
           "Etsy": null,
           "Amazon": null,
           "Google": null
-        },
-        {
-          "Product Category": null,
-          "Column 2": null,
-          "Machine used For Production": null,
-          "Specific Substrate": null,
-          "Uses Raster file for Customization": null,
-          "Nestable": null,
-          "Repetitive customization": null,
-          "Market": null,
-          "Etsy": null,
-          "Amazon": null,
-          "Google": null
         }
       ],
-      "rowCount": 88
+      "rowCount": 87,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r1-c1.jpg",
+          "fileName": "Acrylic_Gallery1_min_1677278731758.jpg"
+        },
+        {
+          "rowIndex": 1,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r2-c1.jpg",
+          "fileName": "il_fullxfull.6225094141_ed54.jpg"
+        },
+        {
+          "rowIndex": 2,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r3-c1.jpg",
+          "fileName": "il_794xN.7345248823_pvhd.jpg"
+        },
+        {
+          "rowIndex": 3,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r4-c1.jpg",
+          "fileName": "4394021c76d77e05df4e97a09164f7d7_158936ea-155c-45f1-9769-e104c677c88a_900x.jpg"
+        },
+        {
+          "rowIndex": 4,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r5-c1.jpg",
+          "fileName": "contemporary-wall-art-mirrored-acrylic-blob-uniqstiq-1.jpg"
+        },
+        {
+          "rowIndex": 5,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r6-c1.jpeg",
+          "fileName": "lu-anne.jpeg"
+        },
+        {
+          "rowIndex": 6,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r7-c1.jpg",
+          "fileName": "acrcylic-3d-letter-sign.jpg"
+        },
+        {
+          "rowIndex": 7,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r8-c1.jpg",
+          "fileName": "Custom-Edge-Lit-LED-Sign.jpg"
+        },
+        {
+          "rowIndex": 8,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r9-c1.jpg",
+          "fileName": "image"
+        },
+        {
+          "rowIndex": 9,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r10-c1.jpg",
+          "fileName": "il_794xN.6414816908_l3dy.jpg"
+        },
+        {
+          "rowIndex": 10,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r11-c1.jpg",
+          "fileName": "il_794xN.7095973248_7l5c.jpg"
+        },
+        {
+          "rowIndex": 11,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r12-c1.png",
+          "fileName": "qr-code-business-social-media-sign-vivideditions-874115.png"
+        },
+        {
+          "rowIndex": 12,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r13-c1.jpg",
+          "fileName": "il_570xN.7012565121_6rmy.jpg"
+        },
+        {
+          "rowIndex": 13,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r14-c1.jpg",
+          "fileName": "il_794xN.7492668925_5048.jpg"
+        },
+        {
+          "rowIndex": 14,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r15-c1.jpg",
+          "fileName": "81Ildfn-MzL.jpg"
+        },
+        {
+          "rowIndex": 15,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r16-c1.jpg",
+          "fileName": "Flame_Acrylic_Award_Ultra__97502.1501081569.jpg"
+        },
+        {
+          "rowIndex": 16,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r17-c1.jpg",
+          "fileName": "zoom_double_fpa2912_completed_1.jpg"
+        },
+        {
+          "rowIndex": 17,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r18-c1.jpg",
+          "fileName": "CustomAcrylicNecklace800_17.jpg"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r19-c1.jpg",
+          "fileName": "il_1140xN.7152068394_3jsq.jpg"
+        },
+        {
+          "rowIndex": 19,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r20-c1.jpg",
+          "fileName": "61rlB8UziOL.jpg"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r21-c1.jpg",
+          "fileName": "61BJ-9mV0LL._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "rowIndex": 21,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r22-c1.jpg",
+          "fileName": "IMG_0117A_500x.jpg"
+        },
+        {
+          "rowIndex": 22,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r23-c1.jpg",
+          "fileName": "mfuv20522_1.jpg"
+        },
+        {
+          "rowIndex": 23,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r24-c1.jpg",
+          "fileName": "color-name-badges-tag__09188.1743431427.jpg"
+        },
+        {
+          "rowIndex": 24,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r25-c1.jpg",
+          "fileName": "images"
+        },
+        {
+          "rowIndex": 25,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r26-c1.png",
+          "fileName": "Engraved%20Plastic%20Equipment%20Tags.png"
+        },
+        {
+          "rowIndex": 26,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r27-c1.jpg",
+          "fileName": "CNCLS-PUZZLE-4.jpg"
+        },
+        {
+          "rowIndex": 27,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r28-c1.jpg",
+          "fileName": "il_794xN.4281563460_3npi.jpg"
+        },
+        {
+          "rowIndex": 28,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r29-c1.jpg",
+          "fileName": "il_570xN.3610424752_kqwm.jpg"
+        },
+        {
+          "rowIndex": 29,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r30-c1.jpg",
+          "fileName": "il_570xN.3439658592_2f0j.jpg"
+        },
+        {
+          "rowIndex": 30,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r31-c1.jpg",
+          "fileName": "easychange-sign-holder.media-010.jpg"
+        },
+        {
+          "rowIndex": 31,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r32-c1.jpg",
+          "fileName": "Acrylic-timeline-display-scaled-600x300.jpg"
+        },
+        {
+          "rowIndex": 32,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r33-c1.jpg",
+          "fileName": "image"
+        },
+        {
+          "rowIndex": 33,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r34-c1.jpg",
+          "fileName": "61GJDpf9ZyL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+        },
+        {
+          "rowIndex": 34,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r35-c1.jpg",
+          "fileName": "il_794xN.5317126247_jr5n.jpg"
+        },
+        {
+          "rowIndex": 35,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r36-c1.jpg",
+          "fileName": "il_794xN.7040622686_5x46.jpg"
+        },
+        {
+          "rowIndex": 36,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r37-c1.jpg",
+          "fileName": "CaptureOneCatalog14596.jpg"
+        },
+        {
+          "rowIndex": 37,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r38-c1.jpg",
+          "fileName": "geckocustom-customized-photo-graduation-acrylic-plaque-and-stand-graduation-gift-hn590-34592412434609_1200x.jpg"
+        },
+        {
+          "rowIndex": 38,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r39-c1.png",
+          "fileName": "Custom_Hidden_Hills_POS_Display-return.png"
+        },
+        {
+          "rowIndex": 39,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r40-c1.jpg",
+          "fileName": "image"
+        },
+        {
+          "rowIndex": 40,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r41-c1.webp",
+          "fileName": "s-l1600.webp"
+        },
+        {
+          "rowIndex": 41,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r42-c1.jpg",
+          "fileName": "Panel-Verde-Valley-Medical-Center-1-AZ.jpg"
+        },
+        {
+          "rowIndex": 42,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r43-c1.jpg",
+          "fileName": "s-l400.jpg"
+        },
+        {
+          "rowIndex": 43,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r44-c1.jpg",
+          "fileName": "1_28_of_33_bafcdb4f-50c2-4fbb-b97f-b217d0ffbd6a.JPG"
+        },
+        {
+          "rowIndex": 44,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r45-c1.jpg",
+          "fileName": "71c0RAf7+KL.jpg"
+        },
+        {
+          "rowIndex": 45,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r46-c1.webp",
+          "fileName": "20190701171805054.jpg.webp"
+        },
+        {
+          "rowIndex": 46,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r47-c1.jpg",
+          "fileName": "il_fullxfull.3643022066_44ne.jpg"
+        },
+        {
+          "rowIndex": 47,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r48-c1.jpg",
+          "fileName": "81Aa0twkf3L._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "rowIndex": 48,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r49-c1.jpg",
+          "fileName": "double-wall-acrylic-tumbler-withstraw-hq.jpg"
+        },
+        {
+          "rowIndex": 49,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r50-c1.jpg",
+          "fileName": "138661_m.jpg"
+        },
+        {
+          "rowIndex": 50,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r51-c1.jpg",
+          "fileName": "%E5%8F%91%E5%8D%A1-2.jpg"
+        },
+        {
+          "rowIndex": 51,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r52-c1.jpg",
+          "fileName": "il_570xN.3671450957_fp22.jpg"
+        },
+        {
+          "rowIndex": 52,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r53-c1.bin",
+          "fileName": "330291051"
+        },
+        {
+          "rowIndex": 53,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r54-c1.jpg",
+          "fileName": "4e11a86d-00d0-4bc0-bef2-ac52ea7d93c2.jpg"
+        },
+        {
+          "rowIndex": 54,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r55-c1.jpg",
+          "fileName": "il_794xN.7534882464_e29y.jpg"
+        },
+        {
+          "rowIndex": 55,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r56-c1.jpg",
+          "fileName": "slider_2.jpg"
+        },
+        {
+          "rowIndex": 56,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r57-c1.jpg",
+          "fileName": "il_1140xN.3255791273_lavq.jpg"
+        },
+        {
+          "rowIndex": 57,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r58-c1.jpg",
+          "fileName": "71FyfRCBIdL.jpg"
+        },
+        {
+          "rowIndex": 58,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r59-c1.jpg",
+          "fileName": "Ha78c2046989a478190e57983275b48dcN.jpg"
+        },
+        {
+          "rowIndex": 59,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r60-c1.png",
+          "fileName": "s-l400.png"
+        },
+        {
+          "rowIndex": 60,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r61-c1.jpg",
+          "fileName": "il_794xN.7506571061_3mwn.jpg"
+        },
+        {
+          "rowIndex": 61,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r62-c1.jpg",
+          "fileName": "8_2cdac973-f20c-469f-9456-2b957a35b8d5_600x.jpg"
+        },
+        {
+          "rowIndex": 62,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r63-c1.jpg",
+          "fileName": "il_794xN.4041844948_45h7.jpg"
+        },
+        {
+          "rowIndex": 63,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r64-c1.jpg",
+          "fileName": "71VG1TSewjL._AC_SX425_.jpg"
+        },
+        {
+          "rowIndex": 66,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r67-c1.jpg",
+          "fileName": "250025_1__88842.1620055600.jpg"
+        },
+        {
+          "rowIndex": 67,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r68-c1.jpg",
+          "fileName": "Hafb18f7290f74267b9ded420c634505bw.jpg"
+        },
+        {
+          "rowIndex": 68,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r69-c1.jpg",
+          "fileName": "Custom-Acrylic-Shoe-Display-Stand.jpg"
+        },
+        {
+          "rowIndex": 69,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r70-c1.jpg",
+          "fileName": "61W1cmm2zlL._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "rowIndex": 70,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r71-c1.jpg",
+          "fileName": "CF_17_10021945-Acrylic-Makeup-Organi.jpg"
+        },
+        {
+          "rowIndex": 71,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r72-c1.jpg",
+          "fileName": "11429_4_520x520.jpg"
+        },
+        {
+          "rowIndex": 72,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r73-c1.jpg",
+          "fileName": "5108Z0zik-L._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "rowIndex": 73,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r74-c1.jpg",
+          "fileName": "51ppwfnPYoL.jpg"
+        },
+        {
+          "rowIndex": 74,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r75-c1.jpg",
+          "fileName": "s-l400.jpg"
+        },
+        {
+          "rowIndex": 75,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r76-c1.jpg",
+          "fileName": "il_794xN.5627960476_6dr7.jpg"
+        },
+        {
+          "rowIndex": 76,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r77-c1.jpg",
+          "fileName": "51q6oJXlXKS.jpg"
+        },
+        {
+          "rowIndex": 77,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r78-c1.jpg",
+          "fileName": "61NtuFan72L.jpg"
+        },
+        {
+          "rowIndex": 78,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r79-c1.jpg",
+          "fileName": "il_794xN.6938161382_e7xp.jpg"
+        },
+        {
+          "rowIndex": 79,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r80-c1.jpg",
+          "fileName": "71YXbtW2g9L.jpg"
+        },
+        {
+          "rowIndex": 80,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r81-c1.jpg",
+          "fileName": "71Fhz3f++UL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+        },
+        {
+          "rowIndex": 81,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r82-c1.jpg",
+          "fileName": "2789711.jpg"
+        },
+        {
+          "rowIndex": 82,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r83-c1.jpg",
+          "fileName": "51lB2c7hnBL.jpg"
+        },
+        {
+          "rowIndex": 83,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r84-c1.jpg",
+          "fileName": "8100-book-stand-4-inch-DARK_a1f232f6-1dc6-4509-bc3f-fb6be986cc1a.jpg"
+        },
+        {
+          "rowIndex": 84,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r85-c1.jpg",
+          "fileName": "11671_source_1722006531.jpg"
+        },
+        {
+          "rowIndex": 85,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r86-c1.jpg",
+          "fileName": "61uY4+l8wkL._AC_UF894,1000_QL80_.jpg"
+        },
+        {
+          "rowIndex": 86,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/acrylic-r87-c1.jpg",
+          "fileName": "il_570xN.6835544028_6d3p.jpg"
+        }
+      ]
     },
     {
       "name": "AluminiumTitanium",
@@ -3644,7 +4055,171 @@
           "Size of Google Market": null
         }
       ],
-      "rowCount": 27
+      "rowCount": 27,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r1-c1.jpg",
+          "fileName": "il_794xN.7507039495_1z5u.jpg"
+        },
+        {
+          "rowIndex": 1,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r2-c1.jpg",
+          "fileName": "v2"
+        },
+        {
+          "rowIndex": 2,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r3-c1.jpg",
+          "fileName": "865771_source_1762415754.jpg"
+        },
+        {
+          "rowIndex": 3,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r4-c1.jpg",
+          "fileName": "91ox+P0X7rL._AC_SY300_SX300_QL70_FMwebp_.jpg"
+        },
+        {
+          "rowIndex": 4,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r5-c1.jpg",
+          "fileName": "il_794xN.5862375074_20dl.jpg"
+        },
+        {
+          "rowIndex": 5,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r6-c1.jpg",
+          "fileName": "il_794xN.5669390739_a7qm.jpg"
+        },
+        {
+          "rowIndex": 6,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r7-c1.jpg",
+          "fileName": "il_794xN.5777399466_onyj.jpg"
+        },
+        {
+          "rowIndex": 7,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r8-c1.jpg",
+          "fileName": "il_794xN.6894482865_7gi6.jpg"
+        },
+        {
+          "rowIndex": 8,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r9-c1.jpg",
+          "fileName": "il_794xN.6623871350_rfe9.jpg"
+        },
+        {
+          "rowIndex": 9,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r10-c1.jpg",
+          "fileName": "718yri5npLL._AC_SX679_.jpg"
+        },
+        {
+          "rowIndex": 10,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r11-c1.jpg",
+          "fileName": "il_794xN.6843274008_qmk4.jpg"
+        },
+        {
+          "rowIndex": 11,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r12-c1.jpg",
+          "fileName": "il_794xN.6900900430_n67v.jpg"
+        },
+        {
+          "rowIndex": 12,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r13-c1.jpg",
+          "fileName": "il_794xN.7454005864_ggrn.jpg"
+        },
+        {
+          "rowIndex": 13,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r14-c1.jpg",
+          "fileName": "il_794xN.5304854439_4ae7.jpg"
+        },
+        {
+          "rowIndex": 14,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r15-c1.jpg",
+          "fileName": "il_794xN.2666807266_imou.jpg"
+        },
+        {
+          "rowIndex": 15,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r16-c1.jpg",
+          "fileName": "il_794xN.3532260049_oz3s.jpg"
+        },
+        {
+          "rowIndex": 16,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r17-c1.jpg",
+          "fileName": "il_794xN.2219861088_d5s2.jpg"
+        },
+        {
+          "rowIndex": 17,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r18-c1.jpg",
+          "fileName": "il_794xN.5540468979_kotk.jpg"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r19-c1.jpg",
+          "fileName": "il_794xN.2252970327_b6co.jpg"
+        },
+        {
+          "rowIndex": 19,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r20-c1.jpg",
+          "fileName": "il_794xN.6087718206_mco1.jpg"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r21-c1.jpg",
+          "fileName": "il_794xN.5628644427_8fcn.jpg"
+        },
+        {
+          "rowIndex": 21,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r22-c1.jpg",
+          "fileName": "il_794xN.7089896221_qsct.jpg"
+        },
+        {
+          "rowIndex": 22,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r23-c1.jpg",
+          "fileName": "il_794xN.6025504060_slxi.jpg"
+        },
+        {
+          "rowIndex": 23,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r24-c1.jpg",
+          "fileName": "il_794xN.5157144014_pg82.jpg"
+        },
+        {
+          "rowIndex": 24,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r25-c1.jpg",
+          "fileName": "il_794xN.7480408287_k433.jpg"
+        },
+        {
+          "rowIndex": 25,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r26-c1.jpg",
+          "fileName": "il_794xN.6991010542_qdlj.jpg"
+        },
+        {
+          "rowIndex": 26,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/ceramic-r27-c1.jpg",
+          "fileName": "il_794xN.7168114242_mqgz.jpg"
+        }
+      ]
     },
     {
       "name": "Cardboard",
@@ -3692,7 +4267,21 @@
           "Size of Google Market": null
         }
       ],
-      "rowCount": 2
+      "rowCount": 2,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/cardboard-r1-c1.jpg",
+          "fileName": "il_794xN.6956088396_75zn.jpg"
+        },
+        {
+          "rowIndex": 1,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/cardboard-r2-c1.jpg",
+          "fileName": "il_794xN.7329782216_cypv.jpg"
+        }
+      ]
     },
     {
       "name": "CorkBoard",
@@ -3745,7 +4334,15 @@
           "Size of Google Market": null
         }
       ],
-      "rowCount": 1
+      "rowCount": 1,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/cotton-r1-c1.jpg",
+          "fileName": "il_794xN.7313528498_jtor.jpg"
+        }
+      ]
     },
     {
       "name": "Felt",
@@ -4337,7 +4934,189 @@
           "Size of Google Market": null
         }
       ],
-      "rowCount": 30
+      "rowCount": 30,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r1-c1.jpg",
+          "fileName": "il_794xN.6603460132_2r80.jpg"
+        },
+        {
+          "rowIndex": 1,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r2-c1.jpg",
+          "fileName": "il_794xN.7152252212_a7o3.jpg"
+        },
+        {
+          "rowIndex": 2,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r3-c1.jpg",
+          "fileName": "il_794xN.6162385837_199i.jpg"
+        },
+        {
+          "rowIndex": 3,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r4-c1.jpg",
+          "fileName": "il_794xN.4750439759_n2lq.jpg"
+        },
+        {
+          "rowIndex": 4,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r5-c1.jpg",
+          "fileName": "il_794xN.7074262067_kemi.jpg"
+        },
+        {
+          "rowIndex": 5,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r6-c1.jpg",
+          "fileName": "il_794xN.5848086560_a1sv.jpg"
+        },
+        {
+          "rowIndex": 6,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r7-c1.jpg",
+          "fileName": "il_794xN.2211527408_4m8f.jpg"
+        },
+        {
+          "rowIndex": 7,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r8-c1.jpg",
+          "fileName": "il_794xN.2070688683_57y3.jpg"
+        },
+        {
+          "rowIndex": 8,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r9-c1.jpg",
+          "fileName": "il_794xN.5931733554_4h7a.jpg"
+        },
+        {
+          "rowIndex": 9,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r10-c1.jpg",
+          "fileName": "il_794xN.6984501398_9r86.jpg"
+        },
+        {
+          "rowIndex": 10,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r11-c1.jpg",
+          "fileName": "il_794xN.7361182987_lm3h.jpg"
+        },
+        {
+          "rowIndex": 11,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r12-c1.jpg",
+          "fileName": "il_794xN.7470467997_9ccj.jpg"
+        },
+        {
+          "rowIndex": 12,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r13-c1.jpg",
+          "fileName": "il_794xN.6996243816_fp2b.jpg"
+        },
+        {
+          "rowIndex": 13,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r14-c1.jpg",
+          "fileName": "il_794xN.6676444752_gj1h.jpg"
+        },
+        {
+          "rowIndex": 14,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r15-c1.jpg",
+          "fileName": "il_794xN.7187079171_pz9h.jpg"
+        },
+        {
+          "rowIndex": 15,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r16-c1.jpg",
+          "fileName": "il_794xN.3407299875_gsfc.jpg"
+        },
+        {
+          "rowIndex": 16,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r17-c1.jpg",
+          "fileName": "il_794xN.7452450142_1nn2.jpg"
+        },
+        {
+          "rowIndex": 17,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r18-c1.jpg",
+          "fileName": "il_794xN.3358890565_spyn.jpg"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r19-c1.jpg",
+          "fileName": "il_794xN.6418053518_j90s.jpg"
+        },
+        {
+          "rowIndex": 19,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r20-c1.jpg",
+          "fileName": "il_794xN.7254099973_rgox.jpg"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r21-c1.jpg",
+          "fileName": "il_794xN.3810288823_cgu6.jpg"
+        },
+        {
+          "rowIndex": 21,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r22-c1.jpg",
+          "fileName": "il_794xN.5850732186_7wy2.jpg"
+        },
+        {
+          "rowIndex": 22,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r23-c1.jpg",
+          "fileName": "il_794xN.4422997000_gxzp.jpg"
+        },
+        {
+          "rowIndex": 23,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r24-c1.jpg",
+          "fileName": "il_794xN.7591282417_8vp6.jpg"
+        },
+        {
+          "rowIndex": 24,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r25-c1.jpg",
+          "fileName": "il_794xN.6878215301_pa56.jpg"
+        },
+        {
+          "rowIndex": 25,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r26-c1.jpg",
+          "fileName": "il_794xN.7476967730_aluj.jpg"
+        },
+        {
+          "rowIndex": 26,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r27-c1.jpg",
+          "fileName": "il_794xN.6914531133_nrz1.jpg"
+        },
+        {
+          "rowIndex": 27,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r28-c1.jpg",
+          "fileName": "il_794xN.6211768526_oskd.jpg"
+        },
+        {
+          "rowIndex": 28,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r29-c1.jpg",
+          "fileName": "il_794xN.6047717108_7dbv.jpg"
+        },
+        {
+          "rowIndex": 29,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/paper-r30-c1.jpg",
+          "fileName": "il_794xN.7176890004_ngp2.jpg"
+        }
+      ]
     },
     {
       "name": "Plastic Laminates",
@@ -5180,9 +5959,269 @@
           "Query Used (ChatGPT 5.2 Extended Thinking)": null
         }
       ],
-      "rowCount": 43
+      "rowCount": 43,
+      "images": [
+        {
+          "rowIndex": 0,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r1-c1.jpg",
+          "fileName": "il_1588xN.6848275099_d383.jpg"
+        },
+        {
+          "rowIndex": 1,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r2-c1.jpg",
+          "fileName": "il_1588xN.6510624761_37e3.jpg"
+        },
+        {
+          "rowIndex": 2,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r3-c1.jpg",
+          "fileName": "il_1588xN.7303883174_or4p.jpg"
+        },
+        {
+          "rowIndex": 3,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r4-c1.jpg",
+          "fileName": "il_1588xN.7528651952_24g8.jpg"
+        },
+        {
+          "rowIndex": 4,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r5-c1.jpg",
+          "fileName": "il_1588xN.3240998882_pf0w.jpg"
+        },
+        {
+          "rowIndex": 5,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r6-c1.jpg",
+          "fileName": "il_1588xN.7419592439_t1hk.jpg"
+        },
+        {
+          "rowIndex": 6,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r7-c1.jpg",
+          "fileName": "il_1588xN.7346903438_1v3z.jpg"
+        },
+        {
+          "rowIndex": 7,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r8-c1.jpg",
+          "fileName": "il_1588xN.7163233503_mm3z.jpg"
+        },
+        {
+          "rowIndex": 8,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r9-c1.jpg",
+          "fileName": "il_1588xN.7106538133_swev.jpg"
+        },
+        {
+          "rowIndex": 9,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r10-c1.jpg",
+          "fileName": "il_794xN.6549247358_ix7a.jpg"
+        },
+        {
+          "rowIndex": 10,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r11-c1.jpg",
+          "fileName": "il_794xN.6249419219_gq5h.jpg"
+        },
+        {
+          "rowIndex": 11,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r12-c1.jpg",
+          "fileName": "il_794xN.7072581937_n78w.jpg"
+        },
+        {
+          "rowIndex": 12,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r13-c1.jpg",
+          "fileName": "il_794xN.5308760516_jyyh.jpg"
+        },
+        {
+          "rowIndex": 13,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r14-c1.jpg",
+          "fileName": "il_794xN.6197444706_5fqu.jpg"
+        },
+        {
+          "rowIndex": 14,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r15-c1.jpg",
+          "fileName": "il_794xN.5861748082_8mav.jpg"
+        },
+        {
+          "rowIndex": 15,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r16-c1.jpg",
+          "fileName": "il_794xN.7445691385_oueu.jpg"
+        },
+        {
+          "rowIndex": 16,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r17-c1.jpg",
+          "fileName": "il_510x680.824004889_9dtm.jpg"
+        },
+        {
+          "rowIndex": 17,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r18-c1.jpg",
+          "fileName": "il_794xN.6913781205_3okg.jpg"
+        },
+        {
+          "rowIndex": 18,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r19-c1.jpg",
+          "fileName": "il_794xN.4340199437_qg7b.jpg"
+        },
+        {
+          "rowIndex": 19,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r20-c1.jpg",
+          "fileName": "il_794xN.2082791653_f3r8.jpg"
+        },
+        {
+          "rowIndex": 20,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r21-c1.jpg",
+          "fileName": "il_794xN.5337658061_szpo.jpg"
+        },
+        {
+          "rowIndex": 21,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r22-c1.jpg",
+          "fileName": "il_794xN.6469375800_3nmm.jpg"
+        },
+        {
+          "rowIndex": 22,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r23-c1.jpg",
+          "fileName": "il_794xN.5420791927_5u75.jpg"
+        },
+        {
+          "rowIndex": 23,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r24-c1.jpg",
+          "fileName": "il_794xN.2858815044_kt2y.jpg"
+        },
+        {
+          "rowIndex": 24,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r25-c1.jpg",
+          "fileName": "il_794xN.6666071792_1dhl.jpg"
+        },
+        {
+          "rowIndex": 25,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r26-c1.jpg",
+          "fileName": "il_794xN.1430560370_3zil.jpg"
+        },
+        {
+          "rowIndex": 26,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r27-c1.jpg",
+          "fileName": "il_794xN.3718394652_mpx7.jpg"
+        },
+        {
+          "rowIndex": 27,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r28-c1.jpg",
+          "fileName": "il_794xN.7081158408_ht07.jpg"
+        },
+        {
+          "rowIndex": 28,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r29-c1.jpg",
+          "fileName": "il_794xN.1301801753_fvdo.jpg"
+        },
+        {
+          "rowIndex": 29,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r30-c1.jpg",
+          "fileName": "il_794xN.5640723041_cyiz.jpg"
+        },
+        {
+          "rowIndex": 30,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r31-c1.jpg",
+          "fileName": "il_794xN.7305069333_7bio.jpg"
+        },
+        {
+          "rowIndex": 31,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r32-c1.jpg",
+          "fileName": "il_794xN.5178892610_8emj.jpg"
+        },
+        {
+          "rowIndex": 32,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r33-c1.jpg",
+          "fileName": "il_794xN.4490053976_s6y1.jpg"
+        },
+        {
+          "rowIndex": 33,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r34-c1.jpg",
+          "fileName": "il_794xN.2928943934_dxhm.jpg"
+        },
+        {
+          "rowIndex": 34,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r35-c1.jpg",
+          "fileName": "il_794xN.6686749148_cu3c.jpg"
+        },
+        {
+          "rowIndex": 35,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r36-c1.jpg",
+          "fileName": "il_794xN.6280144485_nbc8.jpg"
+        },
+        {
+          "rowIndex": 36,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r37-c1.jpg",
+          "fileName": "il_794xN.6476650600_r1pb.jpg"
+        },
+        {
+          "rowIndex": 37,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r38-c1.jpg",
+          "fileName": "il_794xN.6134271008_92t5.jpg"
+        },
+        {
+          "rowIndex": 38,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r39-c1.jpg",
+          "fileName": "il_794xN.6803432067_otrw.jpg"
+        },
+        {
+          "rowIndex": 39,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r40-c1.jpg",
+          "fileName": "il_794xN.7471896971_mx9c.jpg"
+        },
+        {
+          "rowIndex": 40,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r41-c1.jpg",
+          "fileName": "il_794xN.7393891049_56li.jpg"
+        },
+        {
+          "rowIndex": 41,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r42-c1.jpg",
+          "fileName": "il_794xN.5954643670_97m7.jpg"
+        },
+        {
+          "rowIndex": 42,
+          "colIndex": 1,
+          "src": "/tam-assets/tam/wood-r43-c1.jpg",
+          "fileName": "il_794xN.7044473312_3ffg.jpg"
+        }
+      ]
     }
   ],
-  "generatedAt": "2026-03-08T21:24:41.481Z",
+  "generatedAt": "2026-03-09T17:50:35.889Z",
   "sourceFile": "data/raw/tam.xlsx"
 }

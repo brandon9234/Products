@@ -5,8 +5,7 @@ import { loadTamSnapshot } from "./loadSnapshot";
 import type { TamWorkbookSnapshot } from "./types";
 
 const DATASET_SNAPSHOT_FILES: Record<string, string> = {
-  tam: "tam.snapshot.json",
-  "tam-2": "tam-2.snapshot.json"
+  tam: "tam.snapshot.json"
 };
 
 export async function readDatasetSnapshot(datasetId: string): Promise<{
@@ -48,6 +47,8 @@ export function resolveDatasetSnapshotPath(datasetId: string): string {
 
 export function resolveDatasetAssetOutputDir(datasetId: string): string {
   ensureDataset(datasetId);
+  // Manual uploads live in a separate folder so re-importing workbook-derived
+  // assets can replace extracted files without deleting user-added images.
   return path.join(process.cwd(), "public", "tam-assets", datasetId, "manual");
 }
 
@@ -61,4 +62,3 @@ function ensureDataset(datasetId: string): void {
     throw new Error(`Unsupported dataset: ${datasetId}`);
   }
 }
-

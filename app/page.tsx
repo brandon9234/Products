@@ -7,15 +7,12 @@ export default function HomePage() {
         <p className="eyebrow">Products</p>
         <h1>TAM Snapshot Viewer</h1>
         <p>
-          Browse and edit TAM datasets from committed snapshots with separate tabs for each
-          source workbook.
+          Browse and edit the TAM snapshot with a separate substrate overview and
+          material-specific sheets.
         </p>
         <div className="home-actions">
           <Link href="/tam" className="primary-link">
-            Open TAM 1
-          </Link>
-          <Link href="/tam-2" className="secondary-link">
-            Open TAM 2
+            Open TAM
           </Link>
         </div>
       </section>

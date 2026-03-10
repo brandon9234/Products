@@ -1,0 +1,4 @@
+interface:
+  display_name: "TAM Repo Maintainer"
+  short_description: "Maintain the Products TAM repo"
+  default_prompt: "Use $tam-repo-maintainer to work on the Products TAM viewer and keep its agent docs aligned."
